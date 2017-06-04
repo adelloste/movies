@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+// Bootstrap version 3
+@import 'variables';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
