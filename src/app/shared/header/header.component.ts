@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  active = false;
+
   constructor() { }
 
   ngOnInit() { }
+
+  sidenav() {
+    this.active = ! this.active;
+  }
 
 }
