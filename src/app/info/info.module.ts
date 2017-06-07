@@ -2,15 +2,15 @@ import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MoviesComponent } from './movies.component';
+import { InfoComponent } from './info.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule
+    CommonModule
   ],
   declarations: [
-    MoviesComponent
+    InfoComponent
   ]
 })
-export class MoviesModule { }
+export class InfoModule { }
+

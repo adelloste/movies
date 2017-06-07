@@ -23,13 +23,13 @@
   </div>
   <ul class="nav sidebar-nav">
     <li>
-      <a href="#">
-        <i class="glyphicon glyphicon-home" aria-hidden="true"></i>
-        <span>Home</span>
+      <a routerLink="/main/movies" routerLinkActive="active" (click)="sidenav()">
+        <i class="glyphicon glyphicon-film" aria-hidden="true"></i>
+        <span>Movies</span>
       </a>
     </li>
     <li>
-      <a href="#">
+      <a routerLink="/main/info" routerLinkActive="active" (click)="sidenav()">
         <i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
         <span>Info</span>
       </a>

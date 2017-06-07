@@ -2,15 +2,13 @@ import { NgModule }             from '@angular/core';
 import { CommonModule }         from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MoviesComponent } from './movies/movies.component';
-
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/movies',
+        redirectTo: '/main/movies',
         pathMatch: 'full'
       },
       // {
