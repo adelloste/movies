@@ -1,0 +1,59 @@
+@import '../../../../variables';
+
+.wrapper-card {
+    margin-bottom: 34px;
+
+    .card {
+    padding: 0;
+    background-color: $white;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        .image-content {
+            padding: 0;
+            height: 278px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .info-content {
+            padding: 1em;
+            height: 278px;
+
+            .title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .overview {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0;
+                width: 100%;
+                line-height: 1.2em;
+                padding-bottom: 0;
+                margin-bottom: 2px;
+                margin-top: 4px;
+                word-wrap: break-word;
+                white-space: normal;
+                color: $text;
+                line-height: 1.2em;
+                margin-top: 30px;
+            }
+
+            .view-more {
+                width: 100%;
+                margin: 0;
+                border-top: 1px solid $border;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 16px;
+            }
+        }
+    }
+}

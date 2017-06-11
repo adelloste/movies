@@ -1,3 +1,5 @@
-<p>
-  Movies works!
-</p>
+<div class="row">
+  <card *ngFor="let movie of movies"
+      [movie]="movie">
+  </card>
+</div>

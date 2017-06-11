@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent }  from './header/header.component';
 import { FooterComponent }  from './footer/footer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { TruncatePipe }     from './pipes/truncate.pipe';
 
 @NgModule({
   imports: [
@@ -14,12 +15,14 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    TruncatePipe
   ],
   exports: [ 
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    TruncatePipe
   ]
 })
 export class SharedModule { }
