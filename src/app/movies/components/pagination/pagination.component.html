@@ -1,0 +1,13 @@
+<div class="row wrapper-pagination">
+  <div class="col-xs-6 text-left">
+    <p>
+      Currently on page: {{currentPage}} of {{totalPage}}
+    </p>
+  </div>
+  <div class="col-xs-6 text-right wrapper-arrows">
+    <p>
+      <a><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true" (click)="loadMore(currentPage - 1)" *ngIf="currentPage !== 1"></span></a>
+      <a><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true" (click)="loadMore(currentPage + 1)" *ngIf="currentPage !== totalPage"></span></a>
+    </p>
+  </div>
+</div>

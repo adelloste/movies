@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { MoviesComponent } from './movies.component';
 import { CardComponent }   from './components/card/card.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { CardComponent }   from './components/card/card.component';
   ],
   declarations: [
     MoviesComponent,
-    CardComponent
+    CardComponent,
+    PaginationComponent
   ]
 })
 export class MoviesModule { }

@@ -3,3 +3,9 @@
       [movie]="movie">
   </card>
 </div>
+
+<pagination *ngIf="movies.length > 0"
+            [currentPage]="currentPage"
+            [totalPage]="totalPage"
+            (changePage)="changePage($event)">
+</pagination>

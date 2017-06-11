@@ -12,19 +12,35 @@ export class MoviesComponent implements OnInit {
 
   // TODO: Correggere il type in ogni Movie
 
+  currentPage: number;
+  totalPage: number;
+
   movies: any[] = [];
   errorMessage: string;
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
-    this.getMovies();
+    this.getMovies(1);
   }
 
   // Retvie movies from server
-  getMovies() {
-    this.moviesService.getMovies()
-                      .subscribe(movies => {this.movies = movies.results;}, error =>  this.errorMessage = <any>error);
+  getMovies(index: number) {
+    this.moviesService.getMovies(index)
+                      .subscribe(movies => {
+                        this.movies      = movies.results;
+                        this.currentPage = movies.page;
+                        this.totalPage   = movies.total_pages;
+                        
+                        // Scroll top view
+                        window.scrollTo(0, 0);
+
+                      }, error =>  this.errorMessage = <any>error);
+  }
+
+  // Change page
+  changePage(index: number) {
+    this.getMovies(index);
   }
 }
 
