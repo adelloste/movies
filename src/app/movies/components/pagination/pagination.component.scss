@@ -1,5 +1,11 @@
+@import '../../../../variables';
+
 .wrapper-pagination {
     padding: 2em;
+
+    @media (max-width: $screen-sm-max) {
+        padding: 0;
+    }
 
     .wrapper-arrows {
         font-size: 2.0em;

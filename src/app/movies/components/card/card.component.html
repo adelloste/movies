@@ -16,7 +16,7 @@
         {{movie.overview | truncate:30}}
       </p>
       <p class="view-more">
-        <a> View more </a>
+        <a [routerLink]="['/main/movies', movie.id]"> View more </a>
       </p>
     </div>
   </div>

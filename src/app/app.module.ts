@@ -7,6 +7,7 @@ import { RoutingModule } from './app-routing.module';
 import { SharedModule }  from './shared/shared.module';
 import { MainModule }    from './main/main.module'
 import { MoviesModule }  from './movies/movies.module';
+import { MovieModule }   from './movie-detail/movie.module';
 import { InfoModule }    from './info/info.module';
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { MainComponent } from './main/main.component';
     HttpModule,
     InfoModule,
     MoviesModule,
+    MovieModule,
     MainModule,
     RoutingModule
   ],

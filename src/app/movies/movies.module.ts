@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { MoviesComponent } from './movies.component';
-import { CardComponent }   from './components/card/card.component';
+import { MoviesComponent }     from './movies.component';
+import { CardComponent }       from './components/card/card.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({

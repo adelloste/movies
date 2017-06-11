@@ -4,8 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './main.component';
 
-import { InfoComponent }   from '../info/info.component';
-import { MoviesComponent } from '../movies/movies.component';
+import { InfoComponent }        from '../info/info.component';
+import { MoviesComponent }      from '../movies/movies.component';
+import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,10 @@ import { MoviesComponent } from '../movies/movies.component';
           {
             path: 'movies',
             component: MoviesComponent
+          },
+          {
+            path: 'movies/:id',
+            component: MovieDetailComponent
           }
         ]
       }
