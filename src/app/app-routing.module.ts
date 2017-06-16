@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/main/movies',
+        redirectTo: '/login',
         pathMatch: 'full'
       },
       // {

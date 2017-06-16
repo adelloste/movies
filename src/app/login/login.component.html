@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card card-container">
+      <img class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+      <form class="form-signin" [formGroup]="userForm" (ngSubmit)="signIn()" novalidate>
+        <div class="form-group">
+            <input type="email" id="email" class="form-control" placeholder="Email address" formControlName="email">
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" [disabled]="userForm.invalid">Sign in</button>
+      </form>
+  </div>
+</div>

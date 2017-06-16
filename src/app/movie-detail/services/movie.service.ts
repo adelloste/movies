@@ -12,7 +12,7 @@ export class MovieService {
 
   // In questo caso ho inserito any...da rimuovere
   getMovie(index: number): Observable<any> {
-    return this.http.get("https://api.themoviedb.org/3/movie/" + index + "?api_key={API-KEY}&language=en-US")
+    return this.http.get("https://api.themoviedb.org/3/movie/" + index + "?api_key={API_KEY}&language=en-US")
                     .map((res:Response) => res.json())  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }

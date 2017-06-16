@@ -26,16 +26,15 @@ export class MoviesComponent implements OnInit {
 
   // Retrieve movies from server
   getMovies(index: number) {
-    this.moviesService.getMovies(index)
-                      .subscribe(movies => {
-                        this.movies      = movies.results;
-                        this.currentPage = movies.page;
-                        this.totalPage   = movies.total_pages;
-                        
-                        // Scroll top view
-                        window.scrollTo(0, 0);
+    this.moviesService.getMovies(index).subscribe(movies => {
+      this.movies      = movies.results;
+      this.currentPage = movies.page;
+      this.totalPage   = movies.total_pages;
+      
+      // Scroll top view
+      window.scrollTo(0, 0);
 
-                      }, error =>  this.errorMessage = <any>error);
+    }, error =>  this.errorMessage = <any>error);
   }
 
   // Change page
