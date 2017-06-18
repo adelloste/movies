@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent }       from './header/header.component';
 import { FooterComponent }       from './footer/footer.component';
 import { SidenavComponent }      from './sidenav/sidenav.component';
-import { AccountManagerService } from './services/account-manager.service';
 import { TruncatePipe }          from './pipes/truncate.pipe';
 
 @NgModule({
@@ -25,8 +24,6 @@ import { TruncatePipe }          from './pipes/truncate.pipe';
     SidenavComponent,
     TruncatePipe
   ],
-  providers: [
-    AccountManagerService
-  ]
+  providers: [ ]
 })
 export class SharedModule { }

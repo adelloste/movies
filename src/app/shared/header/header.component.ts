@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { AccountManagerService } from "../services/account-manager.service";
 import { AuthService }           from "../../login/services/auth.service";
+import { StorageManagerService } from "../services/storage-manager.service";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [AuthService]
+  providers: [AuthService, StorageManagerService]
 })
 export class HeaderComponent implements OnInit {
 
   active = false;
 
-  constructor(private router: Router, private accountManagerService: AccountManagerService, public authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService, private storageManagerService: StorageManagerService) { }
 
   ngOnInit() { }
 
@@ -23,8 +23,12 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+
+    // Signout with Firebase
     this.authService.signout().then((data) => {
-      this.accountManagerService.setIsLoggedIn(false);
+      // Delete user from storage
+      this.storageManagerService.delete("user");
+      // Redirect to login
       this.router.navigate(['/login']); 
     })
     .catch((error) => {

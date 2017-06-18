@@ -2,7 +2,7 @@ import { Component, OnInit }                  from '@angular/core';
 import { Router }                             from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { AccountManagerService } from "../shared/services/account-manager.service";
+import { StorageManagerService } from "../shared/services/storage-manager.service";
 import { AuthService }           from "./services/auth.service";
 
 import { User } from "../shared/models/user";
@@ -11,13 +11,13 @@ import { User } from "../shared/models/user";
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [AuthService]
+  providers: [AuthService, StorageManagerService]
 })
 export class LoginComponent implements OnInit {
 
   private userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private accountManagerService: AccountManagerService, public authService: AuthService) {
+  constructor(private fb: FormBuilder, private router: Router, public authService: AuthService, private storageManagerService: StorageManagerService) {
     this.createForm();
   }
 
@@ -33,10 +33,11 @@ export class LoginComponent implements OnInit {
   signIn(): void {
     let user = new User(this.userForm.value.email, this.userForm.value.password);
 
+    // Signin with Firebase
     this.authService.signin(user).then((data) => {
-      // Mi salvo che l'utente è loggato
-      this.accountManagerService.setIsLoggedIn(true);
-      // Redirect nella dashboard
+      // Save user in storage
+      this.storageManagerService.store("user", {email: user.getEmail, signin: true});
+      // Redirect to dashboard
       this.router.navigate(['/main/movies']);
     })
     .catch((error) => {

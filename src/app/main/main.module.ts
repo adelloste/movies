@@ -2,9 +2,10 @@ import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MainGuard }         from './main.guard';
-import { MainRoutingModule } from './main-routing.module';
-import { SharedModule }      from '../shared/shared.module';
+import { MainGuard }             from './main.guard';
+import { StorageManagerService } from "../shared/services/storage-manager.service";
+import { MainRoutingModule }     from './main-routing.module';
+import { SharedModule }          from '../shared/shared.module';
 
 import { MainComponent } from './main.component';
 
@@ -19,7 +20,8 @@ import { MainComponent } from './main.component';
     MainComponent
   ],
   providers: [
-    MainGuard
+    MainGuard,
+    StorageManagerService
   ]
 })
 export class MainModule { }
