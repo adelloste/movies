@@ -9,8 +9,7 @@ import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'movie-detail',
   templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.scss'],
-  providers: [MovieService]
+  styleUrls: ['./movie-detail.component.scss']
 })
 export class MovieDetailComponent implements OnInit {
 
@@ -20,13 +19,19 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovie();
+    this.getCredits();
   }
 
   // Retrieve movie from server
   getMovie() {
-    this.route.params
-      .switchMap((params: Params) => this.movieService.getMovie(+params['id']))
-      .subscribe(movie => { console.log(movie); }, error =>  this.errorMessage = <any>error);
+    this.route.data
+        .subscribe((data: { movie: any }) => { console.log(data.movie); }, error =>  this.errorMessage = <any>error);
+  }
+
+  // Retrieve credits from server
+  getCredits() {
+    this.route.data
+        .subscribe((data: { credits: any }) => { console.log(data.credits); }, error =>  this.errorMessage = <any>error);
   }
 
 }
