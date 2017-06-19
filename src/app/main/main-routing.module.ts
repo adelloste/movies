@@ -8,6 +8,9 @@ import { InfoComponent }        from '../info/info.component';
 import { MoviesComponent }      from '../movies/movies.component';
 import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
 
+import { MovieResolverService } from '../movie-detail/services/movie-resolver.service';
+import { MovieCreditsResolverService } from '../movie-detail/services/movie-credits-resolver.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +35,11 @@ import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
           },
           {
             path: 'movies/:id',
-            component: MovieDetailComponent
+            component: MovieDetailComponent,
+            resolve: {
+              movie: MovieResolverService,
+              credits: MovieCreditsResolverService
+            }
           }
         ]
       }
