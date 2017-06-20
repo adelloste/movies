@@ -26,6 +26,17 @@ body {
     padding: 60px 10px 0;
 }
 
+// Remove yellow color Chrome
+input {
+    -webkit-box-shadow: 0 0 0px 1000px $snow inset;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 // Overlay loading app
 .overlay {
     position: fixed;

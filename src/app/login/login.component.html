@@ -1,14 +1,17 @@
 <div class="container">
-  <div class="card card-container">
-      <img class="profile-img-card" src="assets/img/avatar.png" />
-      <form class="form-signin" [formGroup]="userForm" (ngSubmit)="signIn()" novalidate>
-        <div class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Email address" formControlName="email">
-        </div>
-        <div class="form-group">
-            <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password">
-        </div>
-        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" [disabled]="userForm.invalid">Sign in</button>
-      </form>
-  </div>
+    <div class="card card-container">
+        <img class="profile-img-card" src="assets/img/avatar.png" />
+        <div class="alert alert-danger" role="alert" *ngIf="msg">The email address or password you entered is incorrect</div>
+        <form class="form-signin" [formGroup]="userForm" (ngSubmit)="signIn()" novalidate>
+            <div class="form-group">
+                <input type="email" id="email" class="form-control" placeholder="Email address" formControlName="email">
+                <!--<div [hidden]="userForm.controls.email.valid || userForm.controls.email.pristine" class="text-danger"><i>Email not valid</i></div>-->
+                </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password">
+                <!--<div [hidden]="userForm.controls.password.valid || userForm.controls.password.pristine" class="text-danger"><i>Password not valid</i></div>-->
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" [disabled]="userForm.invalid">Sign in</button>
+        </form>
+    </div>
 </div>

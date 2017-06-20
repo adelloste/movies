@@ -16,6 +16,7 @@ import { User } from "../shared/models/user";
 export class LoginComponent implements OnInit {
 
   private userForm: FormGroup;
+  private msg: boolean;
 
   constructor(private fb: FormBuilder, private router: Router, public authService: AuthService, private storageManagerService: StorageManagerService) {
     this.createForm();
@@ -41,7 +42,9 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/main/movies']);
     })
     .catch((error) => {
-      console.log(error);
+      // Bracket notation (see https://github.com/angular/angularfire2/issues/666)
+      if (error['code'] === 'auth/wrong-password' || error['code'] === 'auth/user-not-found')
+        this.msg = true;
     });
   }  
 
