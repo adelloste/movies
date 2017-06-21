@@ -2,13 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
-## Instructions - Firebase
+## Instruction - Firebase
 
 Open `./src/environments/environment.ts` or `./src/environments/environment.prod.ts` and add your Firebase configuration.
 
-## Instructions - The Movie DB
+## Instruction - The Movie DB
 
-Open `./src/environments/environment.ts` or `./src/environments/environment.prod.ts` and add your Api-key configuration.
+Open `./src/environments/environment.ts` or `./src/environments/environment.prod.ts` and add your api-key.
 
 ## Development server
 
