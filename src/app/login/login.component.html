@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card card-container">
         <img class="profile-img-card" src="assets/img/avatar.png" />
-        <div class="alert alert-danger" role="alert" *ngIf="msg">The email address or password you entered is incorrect</div>
+        <div class="alert alert-danger" role="alert" *ngIf="showMsg">{{msg}}</div>
         <form class="form-signin" [formGroup]="userForm" (ngSubmit)="signIn()" novalidate>
             <div class="form-group">
                 <input type="email" id="email" class="form-control" placeholder="Email address" formControlName="email">
