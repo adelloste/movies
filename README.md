@@ -2,11 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
 
-## Instruction - Firebase
+## Demo
+
+Open [Movies](https://movies-33523.firebaseapp.com).
+To access, use the following account `account@gmail.com - 123456789!`
+
+## Instructions - Firebase
 
 Open `./src/environments/environment.ts` or `./src/environments/environment.prod.ts` and add your Firebase configuration.
 
-## Instruction - The Movie DB
+## Instructions - The Movie DB
 
 Open `./src/environments/environment.ts` or `./src/environments/environment.prod.ts` and add your api-key.
 
