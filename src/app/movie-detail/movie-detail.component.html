@@ -2,18 +2,18 @@
   <div class="row header-movie">
     <div class="col-xs-12 bg-img" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'}"></div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-offset-2 info-movie">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 wrapper-info">
+      <div class="col-xs-6 col-sm-12 col-md-4 col-lg-4 wrapper-poster">
         <div class="poster">
           <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" class="img-responsive center-block"/>
         </div>
       </div>
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-8 wrapper-info">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 wrapper-info">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <div class="title">
             <h2>{{movie.title}}</h2>
             <h5>{{movie.release_date | date:longDate}}</h5>
           </div>
-          <div class="description" style="width: 60%;">
+          <div class="description">
             <p>{{movie.overview}}</p>
           </div>
         </div>
