@@ -1,0 +1,47 @@
+.header-movie {
+    position: relative;
+    height: 350px;
+    color: white;
+
+    .bg-img {
+        filter: grayscale(100%) brightness(65%) contrast(100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 40%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .info-movie {
+        height: 100%;
+
+        .wrapper-info {
+            height: 100%;
+            position: relative;
+
+            .poster {
+                width: 58%;
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                img {
+                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+.divider {
+    height: 60px;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+}
