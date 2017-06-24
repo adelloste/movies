@@ -1,0 +1,10 @@
+@import '../../../../variables';
+
+.rating {
+    margin: 10px auto;
+
+    .custom-star {
+        font-size: 1.5em;
+        color: $start-yellow;
+    }
+}

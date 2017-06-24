@@ -4,7 +4,8 @@ import { Location }                 from '@angular/common';
 
 import { MovieService } from './services/movie.service';
 
-import { Movie } from './models/movie-detail';
+import { Movie }   from './models/movie-detail';
+import { Credits } from './models/credits';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -15,6 +16,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class MovieDetailComponent implements OnInit {
 
+  actors: Credits;
   movie: Movie;
   errorMessage: string;
 
@@ -28,18 +30,13 @@ export class MovieDetailComponent implements OnInit {
   // Retrieve movie-detail from server
   getMovie() {
     this.route.data
-        .subscribe((data: { movie: any }) => {
-
-          console.log(data.movie);
-
-          this.movie = data.movie;
-        }, error =>  this.errorMessage = <any>error);
+        .subscribe((data: { movie: Movie }) => { this.movie = data.movie; }, error =>  this.errorMessage = <any>error);
   }
 
   // Retrieve credits from server
   getCredits() {
     this.route.data
-        .subscribe((data: { credits: any }) => { console.log(data.credits); }, error =>  this.errorMessage = <any>error);
+        .subscribe((data: { credits: Credits }) => { this.actors = data.credits["cast"].slice(0, 6);  }, error =>  this.errorMessage = <any>error);
   }
 
 }

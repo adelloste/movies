@@ -1,66 +1,66 @@
 @import '../../variables';
 
-.header-movie {
-    position: relative;
-    min-height: 350px;
-    color: $snow;
+.movie-container {
+    overflow-x: hidden;
 
-    .bg-img {
-        filter: grayscale(100%) brightness(65%) contrast(100%);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 40%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-    }
+    .movie-wrapper {
+        position: relative;
+        min-height: 350px;
+        color: $snow;
+        
+        .bg-img {
+            filter: grayscale(100%) brightness(65%) contrast(100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 40%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
 
-    .info-movie {
-        height: 100%;
-
-        .wrapper-poster {
-            height: 100%;
-            position: relative;
-
-            @media (max-width: $screen-sm-max) {
+        .col-poster {
+            @media (max-width: $screen-xs-max) {
                 display: none;
             }
 
             .poster {
-                width: 60%;
-                margin: 10px auto;
-
-                @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-                    width: 65%;
-                }
-
-                img {
-                    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-                    border-radius: 4px;
-                }
-            }
-        }
-
-        .wrapper-info {
-            height: 100%;
-            position: relative;
-
-            .description {
-                width: 60%;
-
-                @media (max-width: $screen-sm-max) {
-                    width: 100%;
-                }
+                padding: 5%;
             }
         }
     }
-}
 
-.divider {
-    height: 60px;
-    border-top: 1px solid #d7d7d7;
-    border-bottom: 1px solid #d7d7d7;
+    .divider {
+        height: 60px;
+        border-top: 1px solid $divider;
+        border-bottom: 1px solid $divider;
+    }
+
+    .card-actor {
+        height: 300px;
+        margin-bottom: 10px;
+        border: 1px solid $border;
+        padding-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: $white;
+
+        img {
+            transition: opacity .3s;
+            height: 200px;
+            margin: 0;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        > p {
+            margin: 0;
+            padding: 6px 10px 0 10px;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+    }
 }

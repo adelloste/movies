@@ -1,0 +1,6 @@
+<div class="rating">
+  <i class="glyphicon glyphicon-star custom-star"
+    *ngFor="let number of [0,1,2,3,4,5,6,7,8,9,10]; let i = index"
+    [ngClass]="{'glyphicon-star': i < vote, 'glyphicon-star-empty': i > vote}" aria-hidden="true">
+  </i>
+</div>

@@ -7,6 +7,8 @@ import { MovieService }                from './services/movie.service';
 import { MovieCreditsService }         from './services/movie-credits.service';
 import { MovieResolverService }        from './services/movie-resolver.service';
 import { MovieCreditsResolverService } from './services/movie-credits-resolver.service';
+import { CardActorComponent }          from './components/card-actor/card-actor.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { MovieCreditsResolverService } from './services/movie-credits-resolver.s
     RouterModule
   ],
   declarations: [
-    MovieDetailComponent
+    MovieDetailComponent,
+    CardActorComponent,
+    RatingComponent
   ],
   providers: [
     MovieService,
