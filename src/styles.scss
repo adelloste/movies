@@ -1,6 +1,8 @@
 // Bootstrap version 3
 @import 'variables';
 @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+// Google Fonts Roboto
+@import '../node_modules/roboto-fontface/css/roboto/roboto-fontface.css';
 
 html {
     position: relative;
@@ -19,7 +21,8 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: $gray-light
+    background-color: $gray-light;
+    font-family: $roboto;
 }
 
 .content-body {

@@ -1,5 +1,5 @@
 import {Injectable}  from "@angular/core";
-import { ConnectionBackend, RequestOptions, Request, RequestOptionsArgs, Response, Http, Headers} from "@angular/http";
+import { ConnectionBackend, RequestOptions, URLSearchParams, Request, RequestOptionsArgs, Response, Http, Headers} from "@angular/http";
 import {Observable}  from "rxjs/Rx";
 import {environment} from "../../../environments/environment";
 
@@ -15,33 +15,32 @@ export class InterceptedHttpService extends Http {
   }
 
   get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-      url = this.updateUrl(url);
-      return super.get(url, options);
+      return super.get(url, this.updateOptions());
   }
 
   post(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-      url = this.updateUrl(url);
       return super.post(url, body, options);
   }
 
   put(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
-      url = this.updateUrl(url);
       return super.put(url, body, options);
   }
 
   delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-      url = this.updateUrl(url);
       return super.delete(url, options);
   }
 
-  // Update url
-  private updateUrl(req: string) {
+  // Add query params to url
+  private updateOptions() {
 
-    // Add api key to url for Movie DB
-    // if(req.indexOf(environment.api.baseUrl) !== -1)
-    //   return req + "&api_key=" + environment.api.apiKey + "&language=" + environment.api.language;
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('api_key', environment.api.apiKey);
+    params.set('language', environment.api.language);
 
-    return req;
+    let requestOptions = new RequestOptions();
+    requestOptions.params = params;
+
+    return requestOptions;
   }
 
 }
