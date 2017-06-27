@@ -4,9 +4,11 @@ import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 
-import { MoviesComponent }     from './movies.component';
-import { CardComponent }       from './components/card/card.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import { MoviesComponent }        from './movies.component';
+import { CardComponent }          from './components/card/card.component';
+import { PaginationComponent }    from './components/pagination/pagination.component';
+import { MoviesService }          from './services/movies.service';
+import { IndexPaginationService } from './services/index-pagination.service';
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MoviesComponent,
     CardComponent,
     PaginationComponent
-  ]
+  ],
+  providers: [ MoviesService, IndexPaginationService ]
 })
 export class MoviesModule { }

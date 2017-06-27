@@ -4,7 +4,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment }           from '../environments/environment';
 
 import { BrowserModule }                                from '@angular/platform-browser';
-import { NgModule }                                     from '@angular/core';
+import { NgModule, VERSION }                            from '@angular/core';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { ReactiveFormsModule }                          from '@angular/forms'; 
 

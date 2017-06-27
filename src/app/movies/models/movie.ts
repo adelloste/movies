@@ -13,7 +13,7 @@ export class Movie {
     private _popularity: string;
     private _vote_count: number;
 
-    public constructor (poster_pathid:string, adult:boolean, overview:string, release_date:string,genre_ids:Array<number>, id:number, original_title:string, original_language:string, title:string, backdrop_path:string, popularity:string, vote_count:number) {
+    public constructor (poster_pathid?:string, adult?:boolean, overview?:string, release_date?:string,genre_ids?:Array<number>, id?:number, original_title?:string, original_language?:string, title?:string, backdrop_path?:string, popularity?:string, vote_count?:number) {
         this._poster_pathid = poster_pathid;
         this._adult = adult;
         this._overview = overview;
@@ -28,51 +28,51 @@ export class Movie {
         this._vote_count = vote_count;
     }
 
-    public getPosterPathid(): string {
+    public get posterPathid(): string {
         return this._poster_pathid;
     }
 
-    public getAdult(): boolean {
+    public get adult(): boolean {
         return this._adult;
     }
 
-    public getOverview(): string {
+    public get overview(): string {
         return this._overview;
     }
 
-    public getReleaseDate(): string {
+    public get releaseDate(): string {
         return this._release_date;
     }
 
-    public getName(): Array<number> {
+    public get name(): Array<number> {
         return this._genre_ids;
     }
 
-    public getId(): number {
+    public get id(): number {
         return this._id;
     }
 
-    public getOriginalTitle(): string {
+    public get originalTitle(): string {
         return this._original_title;
     }
 
-    public getOriginalLanguage(): string {
+    public get originalLanguage(): string {
         return this._original_language;
     }
 
-    public getTitle(): string {
+    public get title(): string {
         return this._title;
     }
 
-    public getBackdropPath(): string {
+    public get backdropPath(): string {
         return this._backdrop_path;
     }
 
-    public getPopularity(): string {
+    public get popularity(): string {
         return this._popularity;
     }
 
-    public getVoteCount(): number {
+    public get voteCount(): number {
         return this._vote_count;
     }
 }

@@ -12,9 +12,9 @@ export class MoviesService {
 
   constructor(private http: Http) { }
 
-  getMovies(index: number): Observable<any> {
+  getMovies(index: number): Observable<Movies> {
     return this.http.get(environment.api.baseUrl + environment.api.popular.uri + "?page=" + index)
-                    .map((res:Response) => res.json())  // Process the success response object
+                    .map((res:Response) => res.json() as Movies)  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }
 }

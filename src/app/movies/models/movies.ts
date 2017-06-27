@@ -1,4 +1,4 @@
-import { Movie }    from './movie';
+import { Movie } from './movie';
 
 export class Movies {
 
@@ -7,26 +7,26 @@ export class Movies {
     private _total_results: number;
     private _total_pages: number;
 
-    public constructor (page:number, results:Array<Movie>, total_results:number, total_pages:number) {
+    public constructor (page?:number, results?:Array<Movie>, total_results?:number, total_pages?:number) {
         this._page = page;
         this._results = results;
         this._total_results = total_results;
         this._total_pages = total_pages;
     }
 
-    public getPage(): number {
+    public get page(): number {
         return this._page;
     }
 
-    public getResults(): Array<Movie> {
+    public get results(): Array<Movie> {
         return this._results;
     }
 
-    public getTotalResults(): number {
+    public get totalResults(): number {
         return this._total_results;
     }
 
-    public getTotalPages(): number {
+    public get totalPages(): number {
         return this._total_pages;
     }
 

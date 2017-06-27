@@ -15,7 +15,7 @@ export class MovieService {
 
   getMovie(index: number): Observable<Movie> {
     return this.http.get(environment.api.baseUrl + environment.api.popularDetail.uri.replace("{MOVIE_ID}", index.toString()))
-                    .map((res:Response) => res.json())  // Process the success response object
+                    .map((res:Response) => res.json() as Movie)  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }
 
