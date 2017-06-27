@@ -13,7 +13,7 @@
         {{movie.release_date | date}}
       </p>
       <p class="overview">
-        {{movie.overview | truncate:20}}
+        {{movie.overview | truncate:15}}
       </p>
       <p class="view-more">
         <a [routerLink]="['/main/movies', movie.id]"> View more </a>
