@@ -11,13 +11,10 @@
 
         .image-content {
             padding: 0;
-            height: 278px;
-
-            @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-                height: 240px;
-            }
+            height: 220px;
 
             img {
+                margin: 0;
                 height: 100%;
                 -webkit-animation: fadein 800ms; /* Safari, Chrome and Opera > 12.1 */
                 -moz-animation: fadein 800ms; /* Firefox < 16 */
@@ -29,11 +26,7 @@
 
         .info-content {
             padding: 1em;
-            height: 278px;
-
-            @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-                height: 240px;
-            }
+            height: 220px;
 
             .title {
                 white-space: nowrap;
