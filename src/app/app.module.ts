@@ -8,14 +8,15 @@ import { NgModule, VERSION }                            from '@angular/core';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { ReactiveFormsModule }                          from '@angular/forms'; 
 
-import { httpFactory }   from './shared/services/http.factory'; 
-import { RoutingModule } from './app-routing.module';
-import { SharedModule }  from './shared/shared.module';
-import { MainModule }    from './main/main.module'
-import { MoviesModule }  from './movies/movies.module';
-import { MovieModule }   from './movie-detail/movie.module';
-import { InfoModule }    from './info/info.module';
-import { LoginModule }   from './login/login.module';
+import { httpFactory }    from './shared/services/http.factory'; 
+import { RoutingModule }  from './app-routing.module';
+import { SharedModule }   from './shared/shared.module';
+import { MainModule }     from './main/main.module'
+import { MoviesModule }   from './movies/movies.module';
+import { MovieModule }    from './movie-detail/movie.module';
+import { InfoModule }     from './info/info.module';
+import { LoginModule }    from './login/login.module';
+import { NotFoundModule } from './not-found/not-found.module';
 
 import { AppComponent }  from './app.component';
 
@@ -30,6 +31,7 @@ import { AppComponent }  from './app.component';
     MoviesModule,
     MovieModule,
     MainModule,
+    NotFoundModule,
     RoutingModule,
     LocalStorageModule.withConfig({ prefix: '', storageType: 'sessionStorage'}),
     AngularFireModule.initializeApp(environment.firebase),
