@@ -1,11 +1,11 @@
 <section class="movie-container">
   <section class="movie-wrapper">
-    <div class="col-xs-12 bg-img" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original/' + movie.backdrop_path + ')'}"></div>
+    <div class="col-xs-12 bg-img" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w780/' + movie.backdrop_path + ')'}"></div>
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3 col-poster">
           <div class="poster">
-            <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" class="img-responsive center-block"/>
+            <img [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/w780' + movie.poster_path : 'assets/img/placeholder.gif'" class="img-responsive center-block"/>
           </div>
         </div>
         <div class="col-xs-12 col-sm-8 col-md-9">
@@ -27,9 +27,9 @@
       </div>
     </div>
   </section>
-  <section>
+  <section *ngIf="actors.length > 0">
     <div class="container">
-      <h2> Top Billed Cast </h2>
+      <h3> Top Billed Cast </h3>
       <div class="row">
         <card-actor *ngFor="let actor of actors"
             [actor]="actor">
@@ -37,5 +37,17 @@
       </div>
     </div>
   </section>
+
+  <section *ngIf="recommendations.length > 0">
+    <div class="container">
+      <h3> Recommendations </h3>
+      <div class="row">
+        <card-recommendation *ngFor="let recommendation of recommendations"
+            [recommendation]="recommendation">
+        </card-recommendation>
+      </div>
+    </div>
+  </section>
+
 </section>
 

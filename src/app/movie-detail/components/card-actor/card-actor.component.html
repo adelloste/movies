@@ -1,6 +1,6 @@
 <div class="col-xs-6 col-sm-4 col-md-2">
   <div class="card-actor">
-    <img src="https://image.tmdb.org/t/p/w185{{actor.profile_path}}" class="img-responsive center-block"/>
+    <img [src]="actor.profile_path ? 'https://image.tmdb.org/t/p/w185' + actor.profile_path : 'assets/img/placeholder.gif'" class="img-responsive center-block"/>
     <p class="name">{{actor.name}}</p>
     <p class="">{{actor.character}}</p>
   </div>

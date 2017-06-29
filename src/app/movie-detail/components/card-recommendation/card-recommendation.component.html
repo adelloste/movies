@@ -1,0 +1,10 @@
+<div class="col-xs-6 col-sm-4 col-md-2">
+  <div class="card-recommendation">
+    <a [routerLink]="['/main/movies', recommendation.id]">
+        <img [src]="recommendation.poster_path ? 'https://image.tmdb.org/t/p/w185' + recommendation.poster_path : 'assets/img/placeholder.gif'" class="img-responsive center-block"/>
+    </a>
+    <div class="card-overlay">
+      <div class="text">{{recommendation.release_date | date:longDate}}</div>
+    </div>
+  </div>
+</div>

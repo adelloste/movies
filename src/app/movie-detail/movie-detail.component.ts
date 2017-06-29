@@ -4,8 +4,10 @@ import { Location }                 from '@angular/common';
 
 import { MovieService } from './services/movie.service';
 
-import { Movie }   from './models/movie-detail';
-import { Credits } from './models/credits';
+import { Movie }           from './models/movie-detail';
+import { Credits }         from './models/credits';
+import { Recommendation }  from './models/recommendation';
+import { Recommendations } from './models/recommendations';
 
 import 'rxjs/add/operator/switchMap';
 
@@ -18,6 +20,7 @@ export class MovieDetailComponent implements OnInit {
 
   actors: Credits;
   movie: Movie;
+  recommendations: Array<Recommendation>;
   errorMessage: string;
 
   constructor(private movieService: MovieService, private route: ActivatedRoute, private location: Location) { }
@@ -25,6 +28,7 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit() {
     this.getMovie();
     this.getCredits();
+    this.getRecommendation();
   }
 
   // Retrieve movie-detail from server
@@ -37,6 +41,12 @@ export class MovieDetailComponent implements OnInit {
   getCredits() {
     this.route.data
         .subscribe((data: { credits: Credits }) => { this.actors = data.credits["cast"].slice(0, 6);  }, error =>  this.errorMessage = <any>error);
+  }
+
+  // Retrieve recommendation from server
+  getRecommendation() {
+    this.route.data
+        .subscribe((data: { recommendation: Recommendations }) => { this.recommendations = data.recommendation["results"].slice(0, 6); }, error =>  this.errorMessage = <any>error);
   }
 
 }
