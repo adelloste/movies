@@ -1,0 +1,15 @@
+<section class="search-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="form-search" [formGroup]="searchForm" novalidate>
+          <div class="form-group input-group">
+            <span class="input-group-addon" id="basic-addon1"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </span>
+            <input type="text" id="key" class="form-control" aria-describedby="basic-addon1" placeholder="Search for a movie..." formControlName="key">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<search-popup [matchedMovies]="matchedMovies"></search-popup>
