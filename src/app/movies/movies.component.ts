@@ -23,7 +23,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
     this.getMovies(this.indexPaginationService.index);
   }
 
-  // When destroy the component, remeber the current page
+  // When destroy the component, remember the current page
   ngOnDestroy() {
     this.indexPaginationService.index = this.currentPage;
   }

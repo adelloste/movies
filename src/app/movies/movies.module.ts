@@ -13,6 +13,7 @@ import { SearchComponent }        from './components/search/search.component';
 import { MoviesService }          from './services/movies.service';
 import { SearchService }          from './services/search.service';
 import { IndexPaginationService } from './services/index-pagination.service';
+import { SearchPopupComponent } from './components/search-popup/search-popup.component';
 
 
 
@@ -27,7 +28,8 @@ import { IndexPaginationService } from './services/index-pagination.service';
     MoviesComponent,
     CardComponent,
     PaginationComponent,
-    SearchComponent
+    SearchComponent,
+    SearchPopupComponent
   ],
   providers: [ MoviesService, IndexPaginationService, SearchService ]
 })
