@@ -2,10 +2,12 @@ import { Component, OnInit }                  from '@angular/core';
 import { Router }                             from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
+
 import { StorageManagerService } from "../shared/services/storage-manager.service";
 import { AuthService }           from "./services/auth.service";
 
-import { User } from "../shared/models/user";
+import { environment } from "../../environments/environment";
+import { User }        from "../shared/models/user";
 
 @Component({
   selector: 'login',
@@ -27,8 +29,14 @@ export class LoginComponent implements OnInit {
 
   createForm(): void {
     this.userForm = this.fb.group({
-      email: ['', Validators.compose([Validators.required,  Validators.pattern(/\S+@\S+\.\S+/)]) ],
-      password: ['', Validators.compose([Validators.required,  Validators.minLength(8)]) ],
+      email: [
+        environment.production ? '' : 'account@gmail.com',
+        Validators.compose([Validators.required,  Validators.pattern(/\S+@\S+\.\S+/)])
+      ],
+      password: [
+        environment.production ? '' : '123456789!',
+        Validators.compose([Validators.required,  Validators.minLength(8)])
+      ],
     });
   }
 

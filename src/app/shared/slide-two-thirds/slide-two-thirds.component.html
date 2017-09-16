@@ -1,0 +1,13 @@
+<div class="slide-two-thirds">
+    <a [routerLink]="['/main/tvs', item.id]">
+        <figure class="poster">
+            <img [src]="item.poster_path ? 'https://image.tmdb.org/t/p/w185' + item.poster_path : 'assets/img/placeholder.gif'"/>
+        </figure>
+    </a>
+</div>
+
+<!-- 
+<div class="wrapper-poster">
+    <img [src]="item.poster_path ? 'https://image.tmdb.org/t/p/w185' + item.poster_path : 'assets/img/placeholder.gif'"/>
+</div>
+-->

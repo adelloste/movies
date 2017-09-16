@@ -1,0 +1,17 @@
+<section class="list-section">
+  <h1 class="title-section">
+    {{title}}
+  </h1>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of tvs">
+          <slide-two-thirds class="slide-two-thirds" [item]="item"></slide-two-thirds>
+        </div>
+        <div class="swiper-slide swiper-three-quarters">
+          <slide-three-quarters></slide-three-quarters>
+        </div>
+    </div>    
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
+  </div>
+</section>

@@ -46,6 +46,30 @@ export const environment = {
       method: "GET",
       timeout: 30000,
       uri: "/search/movie"
+    },
+    popularTV: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/tv/popular"
+    },
+    topRatedTV: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/tv/top_rated"
+    },
+    airingTodayTV: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/tv/airing_today"
+    },
+    onTheAirTV: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/tv/on_the_air"
     }
   }
 };
