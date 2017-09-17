@@ -2,9 +2,9 @@ import { Component, OnInit }                  from '@angular/core';
 import { Router }                             from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-
 import { StorageManagerService } from "../shared/services/storage-manager.service";
 import { AuthService }           from "./services/auth.service";
+import { LoaderManagerService } from '../shared/services/loader-manager.service';
 
 import { environment } from "../../environments/environment";
 import { User }        from "../shared/models/user";
@@ -21,11 +21,13 @@ export class LoginComponent implements OnInit {
   private showMsg: boolean;
   private msg: string;
 
-  constructor(private fb: FormBuilder, private router: Router, public authService: AuthService, private storageManagerService: StorageManagerService) {
+  constructor(private fb: FormBuilder, private router: Router, public authService: AuthService, private storageManagerService: StorageManagerService, private loaderManagerService: LoaderManagerService) {
     this.createForm();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.loaderManagerService.changeStatus(false);
+  }
 
   createForm(): void {
     this.userForm = this.fb.group({
@@ -41,6 +43,9 @@ export class LoginComponent implements OnInit {
   }
 
   signIn(): void {
+    // Show loader
+    this.loaderManagerService.changeStatus(true);
+    // Create user
     let user = new User(this.userForm.value.email, this.userForm.value.password);
 
     // Signin with Firebase
@@ -51,6 +56,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/main/movies']);
     })
     .catch((error) => {
+      // hide loader
+      this.loaderManagerService.changeStatus(false);
       // Bracket notation (see https://github.com/angular/angularfire2/issues/666)
       this.msg = error['message'];
       this.showMsg = true;

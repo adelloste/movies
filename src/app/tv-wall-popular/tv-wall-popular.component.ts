@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }                 from '@angular/router';
 
-import { PopularTvs }       from '../tv/models/popular-tvs';
-import { PopularTvService } from '../tv/services/popular-tv.service';
+import { PopularTvs }           from '../tv/models/popular-tvs';
+import { PopularTvService }     from '../tv/services/popular-tv.service';
+import { LoaderManagerService } from '../shared/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-popular',
@@ -17,9 +18,10 @@ export class TvWallPopularComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private popularTvService: PopularTvService) { }
+  constructor(private route: ActivatedRoute, private popularTvService: PopularTvService, private loaderManagerService: LoaderManagerService) { }
 
   ngOnInit() {
+    this.loaderManagerService.changeStatus(false);
     this.getPopularTv();
   };
 
@@ -38,11 +40,13 @@ export class TvWallPopularComponent implements OnInit {
   loadMore() {
     this.popularTvService.getPopularTV(this.index).subscribe(
       tvs => {
+        this.loaderManagerService.changeStatus(false);
         this.series = this.series.concat(tvs["results"]);
         this.index++;
         this.isLoading = false;
       },
       error =>  {
+        this.loaderManagerService.changeStatus(false);
         this.errorMessage = <any>error
       }
     );
@@ -55,6 +59,7 @@ export class TvWallPopularComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       // On Scroll Down
       if(this.index <= this.totalPages && !this.isLoading) {
+        this.loaderManagerService.changeStatus(true);
         this.isLoading = true;
         this.loadMore();
       }

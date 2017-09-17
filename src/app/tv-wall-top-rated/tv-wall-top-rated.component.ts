@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }                 from '@angular/router';
 
-import { TopRatedTvs }       from '../tv/models/top-rated-tvs';
-import { TopRatedTvService } from '../tv/services/top-rated-tv.service';
+import { TopRatedTvs }          from '../tv/models/top-rated-tvs';
+import { TopRatedTvService }    from '../tv/services/top-rated-tv.service';
+import { LoaderManagerService } from '../shared/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-top-rated',
@@ -17,13 +18,14 @@ export class TvWallTopRatedComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private topRatedTvService: TopRatedTvService) { }
+  constructor(private route: ActivatedRoute, private topRatedTvService: TopRatedTvService, private loaderManagerService: LoaderManagerService) { }
 
   ngOnInit() {
-    this.getPopularTv();
+    this.loaderManagerService.changeStatus(false);
+    this.getTopRatedTv();
   };
 
-  getPopularTv() {
+  getTopRatedTv() {
     this.route.data.subscribe(
       (data: { topRatedTV: TopRatedTvs }) => {
         this.series = this.series.concat(data.topRatedTV["results"]);
@@ -38,11 +40,13 @@ export class TvWallTopRatedComponent implements OnInit {
   loadMore() {
     this.topRatedTvService.getTopRatedTV(this.index).subscribe(
       tvs => {
+        this.loaderManagerService.changeStatus(false);
         this.series = this.series.concat(tvs["results"]);
         this.index++;
         this.isLoading = false;
       },
       error =>  {
+        this.loaderManagerService.changeStatus(false);
         this.errorMessage = <any>error
       }
     );
@@ -55,6 +59,7 @@ export class TvWallTopRatedComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       // On Scroll Down
       if(this.index <= this.totalPages && !this.isLoading) {
+        this.loaderManagerService.changeStatus(true);
         this.isLoading = true;
         this.loadMore();
       }

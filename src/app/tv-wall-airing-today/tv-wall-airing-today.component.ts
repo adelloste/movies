@@ -3,6 +3,7 @@ import { ActivatedRoute, Params }                 from '@angular/router';
 
 import { AiringTodayTvs }       from '../tv/models/airing-today-tvs';
 import { AiringTodayTvService } from '../tv/services/airing-today-tv.service';
+import { LoaderManagerService } from '../shared/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-airing-today',
@@ -17,13 +18,14 @@ export class TvWallAiringTodayComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private airingTodayTvService: AiringTodayTvService) { }
+  constructor(private route: ActivatedRoute, private airingTodayTvService: AiringTodayTvService, private loaderManagerService: LoaderManagerService) { }
 
   ngOnInit() {
-    this.getOnTheAirTv();
+    this.loaderManagerService.changeStatus(false);
+    this.getAiringTodayTv();
   };
 
-  getOnTheAirTv() {
+  getAiringTodayTv() {
     this.route.data.subscribe(
       (data: { airingTodayTV: AiringTodayTvs }) => {
         this.series = this.series.concat(data.airingTodayTV["results"]);
@@ -38,11 +40,13 @@ export class TvWallAiringTodayComponent implements OnInit {
   loadMore() {
     this.airingTodayTvService.getAiringTodayTV(this.index).subscribe(
       tvs => {
+        this.loaderManagerService.changeStatus(false);
         this.series = this.series.concat(tvs["results"]);
         this.index++;
         this.isLoading = false;
       },
       error =>  {
+        this.loaderManagerService.changeStatus(false);
         this.errorMessage = <any>error
       }
     );
@@ -55,6 +59,7 @@ export class TvWallAiringTodayComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       // On Scroll Down
       if(this.index <= this.totalPages && !this.isLoading) {
+        this.loaderManagerService.changeStatus(true);
         this.isLoading = true;
         this.loadMore();
       }

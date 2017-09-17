@@ -51,7 +51,7 @@ import { OnTheAirTvResolverService }    from '../tv/services/on-the-air-tv-resol
             }
           },
           {
-            path: 'tvs/wall/popular',
+            path: 'tv/wall/popular',
             component: TvWallPopularComponent,
             resolve: {
               popularTV: PopularTvResolverService

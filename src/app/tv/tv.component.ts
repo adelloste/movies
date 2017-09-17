@@ -1,6 +1,8 @@
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
+import { LoaderManagerService } from '../shared/services/loader-manager.service';
+
 import { PopularTvs }     from './models/popular-tvs';
 import { TopRatedTvs }    from './models/top-rated-tvs';
 import { AiringTodayTvs } from './models/airing-today-tvs';
@@ -19,9 +21,11 @@ export class TvComponent implements OnInit {
   onTheAirTVs: OnTheAirTvs;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private loaderManagerService: LoaderManagerService) { }
 
   ngOnInit() {
+    this.loaderManagerService.changeStatus(false);
+    
     this.getPopularTv();
     this.getTopRatedTv();
     this.getAiringTodayTv();

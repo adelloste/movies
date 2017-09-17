@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }                 from '@angular/router';
 
-import { OnTheAirTvs }       from '../tv/models/on-the-air-tvs';
-import { OnTheAirTvService } from '../tv/services/on-the-air-tv.service';
+import { OnTheAirTvs }          from '../tv/models/on-the-air-tvs';
+import { OnTheAirTvService }    from '../tv/services/on-the-air-tv.service';
+import { LoaderManagerService } from '../shared/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-on-the-air',
@@ -17,9 +18,10 @@ export class TvWallOnTheAirComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private onTheAirTvService: OnTheAirTvService) { }
+  constructor(private route: ActivatedRoute, private onTheAirTvService: OnTheAirTvService, private loaderManagerService: LoaderManagerService) { }
 
   ngOnInit() {
+    this.loaderManagerService.changeStatus(false);
     this.getOnTheAirTv();
   };
 
@@ -38,11 +40,13 @@ export class TvWallOnTheAirComponent implements OnInit {
   loadMore() {
     this.onTheAirTvService.getOnTheAirTV(this.index).subscribe(
       tvs => {
+        this.loaderManagerService.changeStatus(false);
         this.series = this.series.concat(tvs["results"]);
         this.index++;
         this.isLoading = false;
       },
       error =>  {
+        this.loaderManagerService.changeStatus(false);
         this.errorMessage = <any>error
       }
     );
@@ -55,6 +59,7 @@ export class TvWallOnTheAirComponent implements OnInit {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       // On Scroll Down
       if(this.index <= this.totalPages && !this.isLoading) {
+        this.loaderManagerService.changeStatus(true);
         this.isLoading = true;
         this.loadMore();
       }
