@@ -13,8 +13,8 @@ export class AiringTodayTvService {
 
   constructor(private http: Http) { }
 
-  getAiringTodayTV(): Observable<AiringTodayTvs> {
-    return this.http.get(environment.api.baseUrl + environment.api.airingTodayTV.uri)
+  getAiringTodayTV(index:number): Observable<AiringTodayTvs> {
+    return this.http.get(environment.api.baseUrl + environment.api.airingTodayTV.uri + "?page=" + index)
                     .map((res:Response) => res.json() as AiringTodayTvs)  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }

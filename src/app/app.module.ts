@@ -9,17 +9,21 @@ import { NgModule, VERSION, APP_INITIALIZER }           from '@angular/core';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { ReactiveFormsModule }                          from '@angular/forms'; 
 
-import { httpFactory }    from './shared/services/http.factory'; 
-import { AppInitService } from './app-init.service';
-import { RoutingModule }  from './app-routing.module';
-import { SharedModule }   from './shared/shared.module';
-import { MainModule }     from './main/main.module'
-import { MoviesModule }   from './movies/movies.module';
-import { MovieModule }    from './movie-detail/movie.module';
-import { TvModule }       from './tv/tv.module';
-import { InfoModule }     from './info/info.module';
-import { LoginModule }    from './login/login.module';
-import { NotFoundModule } from './not-found/not-found.module';
+import { httpFactory }             from './shared/services/http.factory'; 
+import { AppInitService }          from './app-init.service';
+import { RoutingModule }           from './app-routing.module';
+import { SharedModule }            from './shared/shared.module';
+import { MainModule }              from './main/main.module'
+import { MoviesModule }            from './movies/movies.module';
+import { MovieModule }             from './movie-detail/movie.module';
+import { TvModule }                from './tv/tv.module';
+import { TvWallPopularModule }     from './tv-wall-popular/tv-wall-popular.module';
+import { TvWallTopRatedModule }    from './tv-wall-top-rated/tv-wall-top-rated.module';
+import { TvWallOnTheAirModule }    from './tv-wall-on-the-air/tv-wall-on-the-air.module';
+import { TvWallAiringTodayModule } from './tv-wall-airing-today/tv-wall-airing-today.module';
+import { InfoModule }              from './info/info.module';
+import { LoginModule }             from './login/login.module';
+import { NotFoundModule }          from './not-found/not-found.module';
 
 import { AppComponent }  from './app.component';
 
@@ -39,6 +43,10 @@ export function appInitFactory(appInitService: AppInitService): Function {
     MoviesModule,
     MovieModule,
     TvModule,
+    TvWallPopularModule,
+    TvWallTopRatedModule,
+    TvWallOnTheAirModule,
+    TvWallAiringTodayModule,
     MainModule,
     NotFoundModule,
     RoutingModule,

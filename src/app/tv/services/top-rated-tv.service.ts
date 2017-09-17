@@ -13,8 +13,8 @@ export class TopRatedTvService {
 
   constructor(private http: Http) { }
   
-  getTopRatedTV(): Observable<TopRatedTvs> {
-    return this.http.get(environment.api.baseUrl + environment.api.topRatedTV.uri)
+  getTopRatedTV(index:number): Observable<TopRatedTvs> {
+    return this.http.get(environment.api.baseUrl + environment.api.topRatedTV.uri + "?page=" + index)
                     .map((res:Response) => res.json() as TopRatedTvs)  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }

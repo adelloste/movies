@@ -15,7 +15,7 @@ export class PopularTvResolverService implements Resolve<PopularTvs> {
 
   // Return popular tvs with resolve
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<PopularTvs>  {
-    return this.popularTvService.getPopularTV()
+    return this.popularTvService.getPopularTV(1)
   }
 
 }

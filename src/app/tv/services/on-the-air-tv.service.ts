@@ -13,8 +13,8 @@ export class OnTheAirTvService {
 
   constructor(private http: Http) { }
 
-  getOnTheAirTV(): Observable<OnTheAirTvs> {
-    return this.http.get(environment.api.baseUrl + environment.api.onTheAirTV.uri)
+  getOnTheAirTV(index:number): Observable<OnTheAirTvs> {
+    return this.http.get(environment.api.baseUrl + environment.api.onTheAirTV.uri + "?page=" + index)
                     .map((res:Response) => res.json() as OnTheAirTvs)  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }

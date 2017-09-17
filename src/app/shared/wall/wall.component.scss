@@ -1,0 +1,31 @@
+@import '../../../variables';
+
+.center-wall {
+
+    .wrapper-slide-two-thirds {
+        position: relative;
+        width: 180px;
+        display: inline-block;
+        padding: 5px;
+    
+        &:hover {
+            z-index: 10;
+        }
+    
+        // Smartphone
+        @media (max-width: $screen-xs-max) {
+            width: 100px;
+            margin-right: 5px;
+        }
+
+        // iPhone 4/4S
+        @media (max-width: 320px) {
+            width: 85px;
+        }
+    
+        // Tablet
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            width: 145px;
+        }
+    }
+}

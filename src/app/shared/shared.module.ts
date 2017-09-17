@@ -13,6 +13,7 @@ import { SidenavService }              from './services/sidenav.service';
 import { LoaderComponent }             from './loader/loader.component';
 import { SlideTwoThirdsComponent }     from './slide-two-thirds/slide-two-thirds.component';
 import { SlideThreeQuartersComponent } from './slide-three-quarters/slide-three-quarters.component';
+import { WallComponent }               from './wall/wall.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { SlideThreeQuartersComponent } from './slide-three-quarters/slide-three-
     LoaderComponent,
     SlideTwoThirdsComponent,
     SlideThreeQuartersComponent,
-    TruncatePipe
+    TruncatePipe,
+    WallComponent
   ],
   exports: [ 
     HeaderComponent,
@@ -35,6 +37,7 @@ import { SlideThreeQuartersComponent } from './slide-three-quarters/slide-three-
     LoaderComponent,
     SlideTwoThirdsComponent,
     SlideThreeQuartersComponent,
+    WallComponent,
     TruncatePipe
   ],
   providers: [

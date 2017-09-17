@@ -15,7 +15,7 @@ export class AiringTodayTvResolverService {
   
   // Return airing today tvs with resolve
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<AiringTodayTvs>  {
-    return this.airingTodayTvService.getAiringTodayTV()
+    return this.airingTodayTvService.getAiringTodayTV(1)
   }
 
 }
