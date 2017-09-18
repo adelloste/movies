@@ -13,8 +13,8 @@ export class PopularTvService {
 
   constructor(private http: Http) { }
 
-  getPopularTV(): Observable<PopularTvs> {
-    return this.http.get(environment.api.baseUrl + environment.api.popularTV.uri)
+  getPopularTV(index:number): Observable<PopularTvs> {
+    return this.http.get(environment.api.baseUrl + environment.api.popularTV.uri + "?page=" + index)
                     .map((res:Response) => res.json() as PopularTvs)  // Process the success response object
                     .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
   }

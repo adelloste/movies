@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription }      from 'rxjs/Subscription';
+
+import { LoaderManagerService } from '../services/loader-manager.service';
 
 @Component({
   selector: 'loader',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoaderComponent implements OnInit {
 
-  constructor() { }
+  active: boolean = true;
+  subscription: Subscription;
+
+  constructor(private loaderManagerService: LoaderManagerService) {
+    this.subscription = loaderManagerService.status$.subscribe(data => { this.manager(data); });
+  }
 
   ngOnInit() {
+  }
+
+  // Show/Hide loader
+  manager(value) {
+    this.active = value;
   }
 
 }

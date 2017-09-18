@@ -15,7 +15,7 @@ export class TopRatedTvResolverService {
   
   // Return top rated tvs with resolve
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<TopRatedTvs>  {
-    return this.topRatedTvService.getTopRatedTV()
+    return this.topRatedTvService.getTopRatedTV(1)
   }
 
 }
