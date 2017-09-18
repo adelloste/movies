@@ -17,6 +17,7 @@ import { MainModule }              from './main/main.module'
 import { MoviesModule }            from './movies/movies.module';
 import { MovieModule }             from './movie-detail/movie.module';
 import { TvModule }                from './tv/tv.module';
+import { TvDetailModule }          from './tv-detail/tv-detail.module';
 import { TvWallPopularModule }     from './tv-wall-popular/tv-wall-popular.module';
 import { TvWallTopRatedModule }    from './tv-wall-top-rated/tv-wall-top-rated.module';
 import { TvWallOnTheAirModule }    from './tv-wall-on-the-air/tv-wall-on-the-air.module';
@@ -43,6 +44,7 @@ export function appInitFactory(appInitService: AppInitService): Function {
     MoviesModule,
     MovieModule,
     TvModule,
+    TvDetailModule,
     TvWallPopularModule,
     TvWallTopRatedModule,
     TvWallOnTheAirModule,

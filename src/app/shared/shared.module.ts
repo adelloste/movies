@@ -16,6 +16,7 @@ import { SidenavService }        from './services/sidenav.service';
 import { LoaderManagerService }  from './services/loader-manager.service';
 
 import { TruncatePipe }     from './pipes/truncate.pipe';
+import { BgDetailComponent } from './bg-detail/bg-detail.component';
 
 @NgModule({
   imports: [
@@ -29,8 +30,9 @@ import { TruncatePipe }     from './pipes/truncate.pipe';
     LoaderComponent,
     SlideTwoThirdsComponent,
     SlideThreeQuartersComponent,
-    TruncatePipe,
-    WallComponent
+    WallComponent,
+    BgDetailComponent,
+    TruncatePipe
   ],
   exports: [ 
     HeaderComponent,
@@ -40,6 +42,7 @@ import { TruncatePipe }     from './pipes/truncate.pipe';
     SlideTwoThirdsComponent,
     SlideThreeQuartersComponent,
     WallComponent,
+    BgDetailComponent,
     TruncatePipe
   ],
   providers: [

@@ -1,0 +1,28 @@
+<section class="tv-container">
+  
+  <section class="tv-wrapper">
+    <bg-detail [bg]="detailTv.backdrop_path"></bg-detail>
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-poster">
+            <div class="poster">
+              <img [src]="detailTv.poster_path ? 'https://image.tmdb.org/t/p/w780' + detailTv.poster_path : 'assets/img/placeholder.gif'" class="img-responsive center-block"/>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9">
+            <div class="">
+              <h2>{{detailTv.name}}</h2>
+              <h5>{{detailTv.first_air_date | date:longDate}}</h5>
+            </div>
+            <!-- <rating [vote]="detailTv.vote_average"></rating> -->
+            <div class="">
+              <p>{{detailTv.overview}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  
+</section>
+
+
