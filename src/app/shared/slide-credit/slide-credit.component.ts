@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'slide-two-thirds',
-  templateUrl: './slide-two-thirds.component.html',
-  styleUrls: ['./slide-two-thirds.component.scss'],
+  selector: 'slide-credit',
+  templateUrl: './slide-credit.component.html',
+  styleUrls: ['./slide-credit.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SlideTwoThirdsComponent implements OnInit {
+export class SlideCreditComponent implements OnInit {
 
   @Input() item: any;
 

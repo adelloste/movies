@@ -1,0 +1,14 @@
+<section class="info-detail-section">
+  <h1 class="title"> {{detail.title}} {{detail.name}} </h1>
+  <ul>
+    <li class="list-info-title">Release date:</li>
+    <li class="list-info-separetor"> {{detail.release_date | date:'y'}} {{detail.first_air_date | date:'y'}} </li>
+    <li class="list-info-title">Genres:</li>
+    <li *ngFor="let item of detail.genres; let last = last" [ngClass]="{ 'list-info-separetor': last }"> {{item.name}} </li>
+  </ul>
+  <ul>
+    <li class="list-title">Production companies:</li>
+    <li *ngFor="let item of detail.production_companies"> {{item.name}} </li>
+  </ul>
+  <div class="overview"> {{detail.overview}} </div>
+</section>

@@ -23,7 +23,10 @@ import { TopRatedTvResolverService }    from '../tv/services/top-rated-tv-resolv
 import { AiringTodayTvResolverService } from '../tv/services/airing-today-tv-resolver.service';
 import { OnTheAirTvResolverService }    from '../tv/services/on-the-air-tv-resolver.service';
 
-import { TvDetailResolverService }    from '../tv-detail/services/tv-detail-resolver.service';
+import { TvDetailResolverService }         from '../tv-detail/services/tv-detail-resolver.service';
+import { TvCreditsResolverService }        from '../tv-detail/services/tv-credits-resolver.service';
+import { TvSimilarResolverService }        from '../tv-detail/services/tv-similar-resolver.service';
+import { TvRecommendationsResolverService } from '../tv-detail/services/tv-recommendations-resolver.service';
 
 @NgModule({
   imports: [
@@ -57,7 +60,10 @@ import { TvDetailResolverService }    from '../tv-detail/services/tv-detail-reso
             path: 'tv/:id',
             component: TvDetailComponent,
             resolve: {
-              detailTV: TvDetailResolverService
+              detailTV: TvDetailResolverService,
+              creditsTV: TvCreditsResolverService,
+              similarTV: TvSimilarResolverService,
+              recommendationsTV: TvRecommendationsResolverService
             }
           },
           {

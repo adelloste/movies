@@ -3,19 +3,19 @@ import { Router, Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@a
 import { Observable } from 'rxjs/Observable';
 
 import { TvDetailService } from './tv-detail.service';
-// import { Movie } from '../models/movie-detail';
+import { TvDetails }       from '../models/tv-details';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class TvDetailResolverService implements Resolve<any> {
+export class TvDetailResolverService implements Resolve<TvDetails> {
 
   constructor(private tvDetailService: TvDetailService, private router: Router) { }
   
-    // Return tv-detail with resolve
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-      return this.tvDetailService.getTv(route.params['id']);
-    }
+  // Return tv-detail with resolve
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<TvDetails> {
+    return this.tvDetailService.getTv(route.params['id']);
+  }
 
 }

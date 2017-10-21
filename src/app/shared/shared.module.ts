@@ -17,6 +17,10 @@ import { LoaderManagerService }  from './services/loader-manager.service';
 
 import { TruncatePipe }     from './pipes/truncate.pipe';
 import { BgDetailComponent } from './bg-detail/bg-detail.component';
+import { InfoDetailComponent } from './info-detail/info-detail.component';
+// import { SliderComponent } from './slider/slider.component';
+import { SlideCreditComponent } from './slide-credit/slide-credit.component';
+import { SliderDetailComponent } from './slider-detail/slider-detail.component';
 
 @NgModule({
   imports: [
@@ -32,6 +36,10 @@ import { BgDetailComponent } from './bg-detail/bg-detail.component';
     SlideThreeQuartersComponent,
     WallComponent,
     BgDetailComponent,
+    InfoDetailComponent,
+    // SliderComponent,
+    SlideCreditComponent,
+    SliderDetailComponent,
     TruncatePipe
   ],
   exports: [ 
@@ -43,6 +51,10 @@ import { BgDetailComponent } from './bg-detail/bg-detail.component';
     SlideThreeQuartersComponent,
     WallComponent,
     BgDetailComponent,
+    InfoDetailComponent,
+    SlideCreditComponent,
+    SliderDetailComponent,
+    // SliderComponent,
     TruncatePipe
   ],
   providers: [
