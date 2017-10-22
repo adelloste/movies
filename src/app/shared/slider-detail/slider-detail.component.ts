@@ -52,7 +52,6 @@ export class SliderDetailComponent implements OnInit, AfterViewInit, OnChanges, 
     if(this[this.swiperId]) {
       this[this.swiperId].update();
       this[this.swiperId].slideTo(0);
-      console.log(this[this.swiperId]);
     }
   }
 
