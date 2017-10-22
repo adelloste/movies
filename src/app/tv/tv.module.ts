@@ -13,7 +13,6 @@ import { AiringTodayTvResolverService } from './services/airing-today-tv-resolve
 import { OnTheAirTvService }            from './services/on-the-air-tv.service';
 import { OnTheAirTvResolverService }    from './services/on-the-air-tv-resolver.service';
 
-
 import { TvComponent }     from './tv.component';
 import { SliderComponent } from './components/slider/slider.component';
 

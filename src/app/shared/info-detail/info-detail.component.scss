@@ -1,0 +1,55 @@
+@import '../../../variables';
+
+.info-detail-section {
+    padding: 0px 20px;
+
+    .title {
+        font-size: 32px;
+        font-weight: 300;
+        margin: 0;
+        padding: 10px 0px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: 300;
+
+        li {
+            float: left;
+            padding-right: 10px;
+
+            &:after {
+                content: ",";
+            }
+
+            &:first-child:after, &:last-child:after {
+                content: "";
+            }
+        }
+
+        .list-info-title:after {
+            content: "";
+        }
+
+        .list-info-separetor:after {
+            content: "|";
+            font-weight:400;
+        }
+    }
+
+    .overview {
+        text-align: justify;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: 300;
+        padding: 15px 0px;
+    }
+    
+}
