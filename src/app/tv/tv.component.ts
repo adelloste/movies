@@ -3,10 +3,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { LoaderManagerService } from '../core/services/loader-manager.service';
 
-import { PopularTvs }     from './models/popular-tvs';
-import { TopRatedTvs }    from './models/top-rated-tvs';
-import { AiringTodayTvs } from './models/airing-today-tvs';
-import { OnTheAirTvs }    from './models/on-the-air-tvs';
+import { PopularTvs }     from '../core/models/popular-tvs';
+import { TopRatedTvs }    from '../core/models/top-rated-tvs';
+import { OnTheAirTvs }    from '../core/models/on-the-air-tvs';
+import { AiringTodayTvs } from '../core/models/airing-today-tvs';
 
 @Component({
   selector: 'tv',

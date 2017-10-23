@@ -18,6 +18,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
         loadChildren: './login/login.module#LoginModule'
       },
       {
+        path: 'main',
+        loadChildren: './main/main.module#MainModule'
+      },
+      {
         path: '**',
         component: NotFoundComponent 
       }

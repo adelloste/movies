@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }                 from '@angular/router';
 
-import { AiringTodayTvs }       from '../tv/models/airing-today-tvs';
-import { AiringTodayTvService } from '../tv/services/airing-today-tv.service';
+import { AiringTodayTvService } from '../core/services/airing-today-tv.service';
 import { LoaderManagerService } from '../core/services/loader-manager.service';
+
+import { AiringTodayTvs } from '../core/models/airing-today-tvs';
 
 @Component({
   selector: 'tv-wall-airing-today',
