@@ -1,22 +1,18 @@
-import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
-import { environment }    from '../../../environments/environment';
+import { Injectable }             from '@angular/core';
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { Observable }             from 'rxjs/Observable';
 
 import { TopRatedTvs } from '../models/top-rated-tvs';
 
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TopRatedTvService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
   
   getTopRatedTV(index:number): Observable<TopRatedTvs> {
-    return this.http.get(environment.api.baseUrl + environment.api.topRatedTV.uri + "?page=" + index)
-                    .map((res:Response) => res.json() as TopRatedTvs)  // Process the success response object
-                    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
+    return this.http.get<TopRatedTvs>(environment.api.baseUrl + environment.api.topRatedTV.uri, { params: new HttpParams().set('page', index.toString()) });
   }
 
 }

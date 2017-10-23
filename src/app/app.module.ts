@@ -3,13 +3,13 @@ import { AngularFireModule }     from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment }           from '../environments/environment';
 
-import { BrowserModule }                                from '@angular/platform-browser';
-import { BrowserAnimationsModule }                      from '@angular/platform-browser/animations';
-import { NgModule, VERSION, APP_INITIALIZER }           from '@angular/core';
-import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
-import { ReactiveFormsModule }                          from '@angular/forms'; 
+import { BrowserModule }                       from '@angular/platform-browser';
+import { BrowserAnimationsModule }             from '@angular/platform-browser/animations';
+import { NgModule, VERSION, APP_INITIALIZER }  from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule }                 from '@angular/forms'; 
 
-import { httpFactory }             from './shared/services/http.factory'; 
+import { AuthInterceptor }         from './auth-interceptor';
 import { AppInitService }          from './app-init.service';
 import { RoutingModule }           from './app-routing.module';
 import { CoreModule }              from './core/core.module';
@@ -37,10 +37,10 @@ export function appInitFactory(appInitService: AppInitService): Function {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     CoreModule,
     SharedModule,
     ReactiveFormsModule,
-    HttpModule,
     LoginModule,
     InfoModule,
     MoviesModule,
@@ -66,13 +66,13 @@ export function appInitFactory(appInitService: AppInitService): Function {
     {
         provide: APP_INITIALIZER,
         useFactory: appInitFactory,
-        deps: [AppInitService, Http],
+        deps: [ AppInitService ],
         multi: true
     },
     {
-        provide: Http,
-        useFactory: httpFactory,
-        deps: [XHRBackend, RequestOptions]
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
     }
   ],
   bootstrap: [AppComponent]

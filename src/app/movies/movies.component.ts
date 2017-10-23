@@ -38,14 +38,11 @@ export class MoviesComponent implements OnInit, OnDestroy {
     this.moviesService.getMovies(index).subscribe(
       movies => {
         this.loaderManagerService.changeStatus(false);
-
-        this.movies      = movies["results"];
-        this.currentPage = movies["page"];
-        this.totalPage   = movies["total_pages"];
-      
+        this.movies      = movies.results;
+        this.currentPage = movies.page;
+        this.totalPage   = movies.totalPages;
         // Scroll top view
         window.scrollTo(0, 0);
-
       },
       error =>  {
         this.errorMessage = <any>error

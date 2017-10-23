@@ -1,20 +1,17 @@
-import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
-import { Movies }         from '../models/movies';
-import { environment }    from '../../../environments/environment';
+import { Injectable }             from '@angular/core';
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { Observable }             from 'rxjs/Observable';
 
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import { Movies } from '../models/movies';
+
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class MoviesService {
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  getMovies(index: number): Observable<Movies> {
-    return this.http.get(environment.api.baseUrl + environment.api.popular.uri + "?page=" + index)
-                    .map((res:Response) => res.json() as Movies)  // Process the success response object
-                    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));  // Process the error response object
+  getMovies(index:number): Observable<Movies> {
+    return this.http.get<Movies>(environment.api.baseUrl + environment.api.popular.uri, { params: new HttpParams().set('page', index.toString()) });
   }
 }

@@ -9,9 +9,8 @@ import { SlideTwoThirdsComponent }     from './slide-two-thirds/slide-two-thirds
 import { SlideThreeQuartersComponent } from './slide-three-quarters/slide-three-quarters.component';
 import { WallComponent }               from './wall/wall.component';
 
-import { AuthService }           from '../login/services/auth.service';
-import { StorageManagerService } from './services/storage-manager.service';
-import { SidenavService }        from './services/sidenav.service';
+import { AuthService }    from '../login/services/auth.service';
+import { SidenavService } from './services/sidenav.service';
 
 import { TruncatePipe }     from './pipes/truncate.pipe';
 import { BgDetailComponent } from './bg-detail/bg-detail.component';
@@ -55,7 +54,6 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
   ],
   providers: [
     AuthService,
-    StorageManagerService,
     SidenavService
   ]
 })

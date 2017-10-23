@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './components/loader/loader.component';
 
 import { LoaderManagerService }  from './services/loader-manager.service';
+import { StorageManagerService } from './services/storage-manager.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { LoaderManagerService }  from './services/loader-manager.service';
     LoaderComponent
   ],
   providers: [
-    LoaderManagerService
+    LoaderManagerService,
+    StorageManagerService
   ]
 })
 export class CoreModule {
@@ -30,7 +32,8 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        LoaderManagerService
+        LoaderManagerService,
+        StorageManagerService
       ]
     };
   }

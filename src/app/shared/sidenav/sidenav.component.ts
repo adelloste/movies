@@ -3,7 +3,7 @@ import { Router }               from '@angular/router';
 import { Subscription }         from 'rxjs/Subscription';
 
 import { AuthService }           from "../../login/services/auth.service";
-import { StorageManagerService } from "../services/storage-manager.service";
+import { StorageManagerService } from "../../core/services/storage-manager.service";
 import { SidenavService }        from '../services/sidenav.service';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit }                  from '@angular/core';
 import { Router }                             from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import { StorageManagerService } from "../shared/services/storage-manager.service";
+import { StorageManagerService } from "../core/services/storage-manager.service";
 import { AuthService }           from "./services/auth.service";
 import { LoaderManagerService } from '../core/services/loader-manager.service';
 
