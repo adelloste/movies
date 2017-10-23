@@ -12,6 +12,7 @@ import { ReactiveFormsModule }                          from '@angular/forms';
 import { httpFactory }             from './shared/services/http.factory'; 
 import { AppInitService }          from './app-init.service';
 import { RoutingModule }           from './app-routing.module';
+import { CoreModule }              from './core/core.module';
 import { SharedModule }            from './shared/shared.module';
 import { MainModule }              from './main/main.module'
 import { MoviesModule }            from './movies/movies.module';
@@ -36,6 +37,7 @@ export function appInitFactory(appInitService: AppInitService): Function {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CoreModule,
     SharedModule,
     ReactiveFormsModule,
     HttpModule,

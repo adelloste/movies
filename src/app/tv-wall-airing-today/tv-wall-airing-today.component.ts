@@ -3,7 +3,7 @@ import { ActivatedRoute, Params }                 from '@angular/router';
 
 import { AiringTodayTvs }       from '../tv/models/airing-today-tvs';
 import { AiringTodayTvService } from '../tv/services/airing-today-tv.service';
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-airing-today',
@@ -18,7 +18,11 @@ export class TvWallAiringTodayComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private airingTodayTvService: AiringTodayTvService, private loaderManagerService: LoaderManagerService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private airingTodayTvService: AiringTodayTvService, 
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
     this.loaderManagerService.changeStatus(false);

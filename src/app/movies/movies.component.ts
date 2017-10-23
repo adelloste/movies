@@ -4,7 +4,7 @@ import { Movies }                 from './models/movies';
 import { Movie }                  from './models/movie';
 import { MoviesService }          from './services/movies.service';
 import { IndexPaginationService } from './services/index-pagination.service';
-import { LoaderManagerService }   from '../shared/services/loader-manager.service';
+import { LoaderManagerService }   from '../core/services/loader-manager.service';
 
 @Component({
   selector: 'movies',
@@ -18,7 +18,11 @@ export class MoviesComponent implements OnInit, OnDestroy {
   movies: Array<Movie> = [];
   errorMessage: string;
 
-  constructor(private indexPaginationService: IndexPaginationService, private moviesService: MoviesService, private loaderManagerService: LoaderManagerService) { }
+  constructor(
+    private indexPaginationService: IndexPaginationService, 
+    private moviesService: MoviesService, 
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
     this.getMovies(this.indexPaginationService.index);

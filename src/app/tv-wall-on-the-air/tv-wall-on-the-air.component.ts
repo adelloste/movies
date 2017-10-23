@@ -3,7 +3,7 @@ import { ActivatedRoute, Params }                 from '@angular/router';
 
 import { OnTheAirTvs }          from '../tv/models/on-the-air-tvs';
 import { OnTheAirTvService }    from '../tv/services/on-the-air-tv.service';
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-on-the-air',

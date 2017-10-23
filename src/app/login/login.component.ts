@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { StorageManagerService } from "../shared/services/storage-manager.service";
 import { AuthService }           from "./services/auth.service";
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 import { environment } from "../../environments/environment";
 import { User }        from "../shared/models/user";
@@ -17,11 +17,17 @@ import { User }        from "../shared/models/user";
 })
 export class LoginComponent implements OnInit {
 
-  private userForm: FormGroup;
-  private showMsg: boolean;
-  private msg: string;
+  userForm: FormGroup;
+  showMsg: boolean;
+  msg: string;
 
-  constructor(private fb: FormBuilder, private router: Router, public authService: AuthService, private storageManagerService: StorageManagerService, private loaderManagerService: LoaderManagerService) {
+  constructor(
+    private fb: FormBuilder, 
+    private router: Router, 
+    public authService: AuthService, 
+    private storageManagerService: StorageManagerService, 
+    private loaderManagerService: LoaderManagerService
+  ) {
     this.createForm();
   }
 

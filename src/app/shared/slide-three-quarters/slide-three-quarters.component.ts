@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoaderManagerService } from '../services/loader-manager.service';
+import { LoaderManagerService } from '../../core/services/loader-manager.service';
 
 @Component({
   selector: 'slide-three-quarters',
