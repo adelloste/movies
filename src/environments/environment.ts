@@ -5,16 +5,16 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: ""
-  },
+  firebase: { 
+    apiKey: "AIzaSyDmk09PxPbTpUu_rhfMQY2mT0cLRyfLwQc", 
+    authDomain: "movies-33523.firebaseapp.com", 
+    databaseURL: "https://movies-33523.firebaseio.com", 
+    projectId: "movies-33523", 
+    storageBucket: "movies-33523.appspot.com", 
+    messagingSenderId: "58316878085" 
+  }, 
   api: {
-    apiKey: "",
+    apiKey: "2764fa87647fd7536e839ea8826eb796",
     baseUrl: 'https://api.themoviedb.org/3',
     language: 'en-US',
     popular: {
@@ -70,6 +70,30 @@ export const environment = {
       method: "GET",
       timeout: 30000,
       uri: "/tv/on_the_air"
-    }
+    },
+    detailTV: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/tv/{TV_ID}" 
+    }, 
+    creditsTV: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/tv/{TV_ID}/credits" 
+    }, 
+    similarTV: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/tv/{TV_ID}/similar" 
+    }, 
+    recommendationsTV: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/tv/{TV_ID}/recommendations" 
+    } 
   }
 };
