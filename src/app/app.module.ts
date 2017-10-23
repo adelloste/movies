@@ -23,8 +23,6 @@ import { TvWallPopularModule }     from './tv-wall-popular/tv-wall-popular.modul
 import { TvWallTopRatedModule }    from './tv-wall-top-rated/tv-wall-top-rated.module';
 import { TvWallOnTheAirModule }    from './tv-wall-on-the-air/tv-wall-on-the-air.module';
 import { TvWallAiringTodayModule } from './tv-wall-airing-today/tv-wall-airing-today.module';
-import { InfoModule }              from './info/info.module';
-import { LoginModule }             from './login/login.module';
 import { NotFoundModule }          from './not-found/not-found.module';
 
 import { AppComponent }  from './app.component';
@@ -41,8 +39,6 @@ export function appInitFactory(appInitService: AppInitService): Function {
     CoreModule,
     SharedModule,
     ReactiveFormsModule,
-    LoginModule,
-    InfoModule,
     MoviesModule,
     MovieModule,
     TvModule,

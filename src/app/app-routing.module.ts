@@ -14,6 +14,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
         pathMatch: 'full'
       },
       {
+        path: 'login',
+        loadChildren: './login/login.module#LoginModule'
+      },
+      {
         path: '**',
         component: NotFoundComponent 
       }
