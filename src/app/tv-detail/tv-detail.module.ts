@@ -1,7 +1,4 @@
 import { NgModule }     from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
 import { SharedModule } from '../shared/shared.module';
 
 import { TvDetailComponent }                from './tv-detail.component';
@@ -16,8 +13,6 @@ import { TvRecommendationsResolverService } from './services/tv-recommendations-
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
     SharedModule
   ],
   declarations: [

@@ -7,7 +7,6 @@ import { BrowserModule }                       from '@angular/platform-browser';
 import { BrowserAnimationsModule }             from '@angular/platform-browser/animations';
 import { NgModule, VERSION, APP_INITIALIZER }  from '@angular/core';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule }                 from '@angular/forms'; 
 
 import { AuthInterceptor }         from './auth-interceptor';
 import { AppInitService }          from './app-init.service';
@@ -38,7 +37,6 @@ export function appInitFactory(appInitService: AppInitService): Function {
     HttpClientModule,
     CoreModule,
     SharedModule,
-    ReactiveFormsModule,
     MoviesModule,
     MovieModule,
     TvModule,

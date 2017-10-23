@@ -1,6 +1,7 @@
-import { NgModule }     from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgModule }            from '@angular/core';
+import { CommonModule }        from '@angular/common';
+import { RouterModule }        from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent }             from './header/header.component';
 import { FooterComponent }             from './footer/footer.component';
@@ -22,7 +23,8 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HeaderComponent,
@@ -38,7 +40,11 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
     SliderDetailComponent,
     TruncatePipe
   ],
-  exports: [ 
+  exports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
