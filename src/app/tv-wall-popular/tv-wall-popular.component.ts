@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }                 from '@angular/router';
 
-import { PopularTvs }           from '../tv/models/popular-tvs';
-import { PopularTvService }     from '../tv/services/popular-tv.service';
+import { PopularTvs } from '../core/models/popular-tvs';
+
+import { PopularTvService }     from '../core/services/popular-tv.service';
 import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 @Component({

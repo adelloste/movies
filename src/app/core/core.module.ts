@@ -6,6 +6,11 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderManagerService }  from './services/loader-manager.service';
 import { StorageManagerService } from './services/storage-manager.service';
 
+import { AiringTodayTvService } from './services/airing-today-tv.service';
+import { PopularTvService }     from './services/popular-tv.service';
+import { TopRatedTvService }    from './services/top-rated-tv.service';
+import { OnTheAirTvService }    from './services/on-the-air-tv.service';
+
 @NgModule({
   imports: [
     CommonModule
@@ -18,7 +23,11 @@ import { StorageManagerService } from './services/storage-manager.service';
   ],
   providers: [
     LoaderManagerService,
-    StorageManagerService
+    StorageManagerService,
+    AiringTodayTvService,
+    PopularTvService,
+    TopRatedTvService,
+    OnTheAirTvService
   ]
 })
 export class CoreModule {
@@ -33,7 +42,11 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         LoaderManagerService,
-        StorageManagerService
+        StorageManagerService,
+        AiringTodayTvService,
+        PopularTvService,
+        TopRatedTvService,
+        OnTheAirTvService
       ]
     };
   }

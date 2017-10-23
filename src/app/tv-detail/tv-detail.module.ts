@@ -1,5 +1,7 @@
 import { NgModule }     from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
+
+import { SharedModule }          from '../shared/shared.module';
+import { TvDetailRoutingModule } from './tv-detail-routing.module';
 
 import { TvDetailComponent }                from './tv-detail.component';
 import { TvDetailService }                  from './services/tv-detail.service';
@@ -13,7 +15,8 @@ import { TvRecommendationsResolverService } from './services/tv-recommendations-
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
+    TvDetailRoutingModule
   ],
   declarations: [
     TvDetailComponent
