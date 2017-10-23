@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent }              from './main.component';
 import { MainGuard }                  from './main.guard';
-import { InfoComponent }              from '../info/info.component';
 import { MoviesComponent }            from '../movies/movies.component';
 import { MovieDetailComponent }       from '../movie-detail/movie-detail.component';
 import { TvComponent }                from '../tv/tv.component';
@@ -38,13 +37,8 @@ import { TvRecommendationsResolverService } from '../tv-detail/services/tv-recom
         canActivate: [ MainGuard ],
         children: [
           {
-            path: '', 
-            redirectTo: 'info', 
-            pathMatch: 'full' 
-          },
-          {
             path: 'info',
-            component: InfoComponent
+            loadChildren: '../info/info.module#InfoModule'
           },
           {
             path: 'tv',

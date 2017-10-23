@@ -1,26 +1,27 @@
-import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
+import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class AppInitService {
 
-  private _startupData: any;
+  private startupData: any;
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   // Important: It should return a Promise
   public load(): Promise<any> {
     return this.http.get("")
                     .map((res:Response) => res.json() as any)
                     .toPromise()
-                    .then((data: any) => {this._startupData = data;})
+                    .then((data: any) => {this.startupData = data;})
                     .catch((error:any) => Promise.resolve());
   }
 
-  public startupData(): any {
-    return this._startupData;
+  public getStartupData(): any {
+    return this.startupData;
   }
 
   // GET parameters from url (https://stackoverflow.com/a/979997/3751473)

@@ -1,6 +1,5 @@
 import { NgModule }     from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 import { MovieDetailComponent }               from './movie-detail.component';
 import { MovieService }                       from './services/movie.service';
@@ -15,8 +14,7 @@ import { CardRecommendationComponent }        from './components/card-recommenda
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule
+    SharedModule
   ],
   declarations: [
     MovieDetailComponent,

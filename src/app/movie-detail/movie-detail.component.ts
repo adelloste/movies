@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 
 import { MovieService }         from './services/movie.service';
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 import { Movie }           from './models/movie-detail';
 import { Credits }         from './models/credits';
@@ -23,7 +23,11 @@ export class MovieDetailComponent implements OnInit {
   recommendations: Array<Recommendation>;
   errorMessage: string;
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute, private loaderManagerService: LoaderManagerService) { }
+  constructor(
+    private movieService: MovieService, 
+    private route: ActivatedRoute,
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
     this.loaderManagerService.changeStatus(false);

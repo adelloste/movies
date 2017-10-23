@@ -3,7 +3,7 @@ import { ActivatedRoute, Params }                 from '@angular/router';
 
 import { PopularTvs }           from '../tv/models/popular-tvs';
 import { PopularTvService }     from '../tv/services/popular-tv.service';
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-popular',
@@ -18,7 +18,11 @@ export class TvWallPopularComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private popularTvService: PopularTvService, private loaderManagerService: LoaderManagerService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private popularTvService: PopularTvService, 
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
     this.loaderManagerService.changeStatus(false);

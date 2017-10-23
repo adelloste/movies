@@ -3,7 +3,7 @@ import { ActivatedRoute, Params }                 from '@angular/router';
 
 import { TopRatedTvs }          from '../tv/models/top-rated-tvs';
 import { TopRatedTvService }    from '../tv/services/top-rated-tv.service';
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 @Component({
   selector: 'tv-wall-top-rated',
@@ -18,7 +18,11 @@ export class TvWallTopRatedComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string;
 
-  constructor(private route: ActivatedRoute, private topRatedTvService: TopRatedTvService, private loaderManagerService: LoaderManagerService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private topRatedTvService: TopRatedTvService, 
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
     this.loaderManagerService.changeStatus(false);

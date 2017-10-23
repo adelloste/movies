@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 import { TvDetails }         from './models/tv-details';
 import { TvCredits }         from './models/tv-credits';

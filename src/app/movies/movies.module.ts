@@ -1,8 +1,4 @@
-import { NgModule }            from '@angular/core';
-import { CommonModule }        from '@angular/common';
-import { RouterModule }        from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { NgModule }     from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 
 import { MoviesComponent }        from './movies.component';
@@ -19,10 +15,7 @@ import { SearchPopupComponent } from './components/search-popup/search-popup.com
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
-    SharedModule,
-    ReactiveFormsModule
+    SharedModule
   ],
   declarations: [
     MoviesComponent,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription }      from 'rxjs/Subscription';
 
-import { LoaderManagerService } from '../services/loader-manager.service';
+import { LoaderManagerService } from '../../services/loader-manager.service';
 
 @Component({
   selector: 'loader',

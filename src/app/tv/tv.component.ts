@@ -1,7 +1,7 @@
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { LoaderManagerService } from '../shared/services/loader-manager.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 import { PopularTvs }     from './models/popular-tvs';
 import { TopRatedTvs }    from './models/top-rated-tvs';
