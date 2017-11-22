@@ -16,7 +16,12 @@ export class SidenavComponent implements OnDestroy {
   private active: boolean = false;
   private subscription: Subscription;
 
-  constructor(private router: Router, private authService: AuthService, private storageManagerService: StorageManagerService, private sidenavService: SidenavService) {
+  constructor(
+    private router: Router,
+    private authService: AuthService, 
+    private storageManagerService: StorageManagerService, 
+    private sidenavService: SidenavService
+  ) {
     this.subscription = sidenavService.status$.subscribe(data => { this.sidenav(); });
   }
 
