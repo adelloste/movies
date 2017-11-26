@@ -4,6 +4,10 @@ import { Router }            from '@angular/router';
 import { AuthService }           from "../../login/services/auth.service";
 import { StorageManagerService } from "../../core/services/storage-manager.service";
 import { SidenavService }        from '../services/sidenav.service';
+import { ModalSearchComponent }  from "../../core/components/modal-search/modal-search.component";
+
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef }     from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +16,14 @@ import { SidenavService }        from '../services/sidenav.service';
 })
 export class HeaderComponent implements OnInit {
 
+  bsModalRef: BsModalRef;
+
   constructor(
     private router: Router,
     private authService: AuthService, 
     private storageManagerService: StorageManagerService, 
-    private sidenavService: SidenavService
+    private sidenavService: SidenavService,
+    private modalService: BsModalService
   ) { }
 
   ngOnInit() { }
@@ -24,6 +31,10 @@ export class HeaderComponent implements OnInit {
   // Send message to subscribers via observable subject
   sidenav() {
     this.sidenavService.changeStatus();
+  }
+
+  search() {
+    this.bsModalRef = this.modalService.show(ModalSearchComponent, {class: 'modal-dialog-custom'});
   }
 
   logout() {

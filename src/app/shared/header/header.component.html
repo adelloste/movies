@@ -11,6 +11,9 @@
       <li><a routerLink="/main/info" routerLinkActive="active">INFO</a></li>
     </ul>
     <div class="navbar-header pull-right">
+      <a class="navbar-brand" (click)="search()">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </a>
       <a class="navbar-brand" (click)="logout()">
         <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
       </a>
