@@ -29,6 +29,18 @@ body {
     padding: 60px 10px 0;
 }
 
+.bg-full {
+    background-color: $dusk;
+}
+
+.color-full {
+    color: $dusk;
+}
+
+.border-full {
+    color: $dusk;
+}
+
 // Remove yellow color Chrome
 input {
     -webkit-box-shadow: 0 0 0px 1000px $snow inset;
