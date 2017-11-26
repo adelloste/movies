@@ -1,0 +1,15 @@
+.search-modal {
+    color: #f9fbfc;
+
+    .search-modal-close {
+        position: absolute;
+        right: 10px;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .search-modal-body {
+        padding: 140px 60px;
+    }
+}
+

@@ -10,16 +10,19 @@ import { AiringTodayTvService } from './services/airing-today-tv.service';
 import { PopularTvService }     from './services/popular-tv.service';
 import { TopRatedTvService }    from './services/top-rated-tv.service';
 import { OnTheAirTvService }    from './services/on-the-air-tv.service';
+import { ModalSearchComponent } from './components/modal-search/modal-search.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    LoaderComponent
+    LoaderComponent,
+    ModalSearchComponent
   ],
   exports: [
-    LoaderComponent
+    LoaderComponent,
+    ModalSearchComponent
   ],
   providers: [
     LoaderManagerService,
@@ -28,6 +31,9 @@ import { OnTheAirTvService }    from './services/on-the-air-tv.service';
     PopularTvService,
     TopRatedTvService,
     OnTheAirTvService
+  ],
+  entryComponents: [
+    ModalSearchComponent
   ]
 })
 export class CoreModule {
