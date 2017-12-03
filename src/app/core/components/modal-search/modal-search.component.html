@@ -1,18 +1,3 @@
-<!-- <div class="modal-header">
-  <h4 class="modal-title pull-left">{{title}}</h4>
-  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <ul *ngIf="list.length">
-    <li *ngFor="let item of list">{{item}}</li>
-  </ul>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
-</div> -->
-
 <section>
   <div class="search-modal">
     <div class="search-modal-close" (click)="close()">
@@ -20,6 +5,25 @@
     </div>
     <div class="search-modal-body">
       <h4>SEARCH</h4>
+
+      <section class="search-section">
+        <div class="row">
+          <div class="col-xs-12">
+            <form class="form-search" [formGroup]="searchForm" novalidate>
+              <div class="form-group input-group input-group-lg">
+                <input type="text" id="key" class="form-control" aria-describedby="basic-addon1" placeholder="Search for..." formControlName="key">
+                <span class="input-group-addon addon" id="basic-addon1"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+      <!-- DA SISTEMARE E CAPIRE COME GESTIRE BENE IL SEGUENTE COMPONENTE -->
+      <section class="results-search" *ngIf="results">
+        <slider-detail [items]="results" [title]="'Results'" [url]="'/main/tv/wall/popular'" [section]="false"></slider-detail>
+      </section> 
+      
     </div>
   </div>
 </section>
