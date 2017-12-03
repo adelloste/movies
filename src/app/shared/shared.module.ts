@@ -16,7 +16,7 @@ import { SidenavService } from './services/sidenav.service';
 import { TruncatePipe }     from './pipes/truncate.pipe';
 import { BgDetailComponent } from './bg-detail/bg-detail.component';
 import { InfoDetailComponent } from './info-detail/info-detail.component';
-// import { SliderComponent } from './slider/slider.component';
+import { SliderComponent } from './slider/slider.component';
 import { SlideCreditComponent } from './slide-credit/slide-credit.component';
 import { SliderDetailComponent } from './slider-detail/slider-detail.component';
 
@@ -35,7 +35,7 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
     WallComponent,
     BgDetailComponent,
     InfoDetailComponent,
-    // SliderComponent,
+    SliderComponent,
     SlideCreditComponent,
     SliderDetailComponent,
     TruncatePipe
@@ -55,7 +55,7 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
     InfoDetailComponent,
     SlideCreditComponent,
     SliderDetailComponent,
-    // SliderComponent,
+    SliderComponent,
     TruncatePipe
   ],
   providers: [
