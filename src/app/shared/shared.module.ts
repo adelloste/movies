@@ -19,6 +19,8 @@ import { InfoDetailComponent } from './info-detail/info-detail.component';
 import { SliderComponent } from './slider/slider.component';
 import { SlideCreditComponent } from './slide-credit/slide-credit.component';
 import { SliderDetailComponent } from './slider-detail/slider-detail.component';
+import { SliderSearchComponent } from './slider-search/slider-search.component';
+import { SlideSearchComponent } from './slide-search/slide-search.component';
 
 @NgModule({
   imports: [
@@ -38,7 +40,9 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
     SliderComponent,
     SlideCreditComponent,
     SliderDetailComponent,
-    TruncatePipe
+    TruncatePipe,
+    SliderSearchComponent,
+    SlideSearchComponent
   ],
   exports: [
     CommonModule,
@@ -56,7 +60,9 @@ import { SliderDetailComponent } from './slider-detail/slider-detail.component';
     SlideCreditComponent,
     SliderDetailComponent,
     SliderComponent,
-    TruncatePipe
+    TruncatePipe,
+    SliderSearchComponent,
+    SlideSearchComponent
   ],
   providers: [
     AuthService,

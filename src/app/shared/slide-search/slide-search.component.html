@@ -1,0 +1,6 @@
+<div class="slide-two-thirds" (click)="go(item.media_type, item.id)">
+  <figure class="poster">
+      <img [src]="item.poster_path ? 'https://image.tmdb.org/t/p/w185' + item.poster_path : 'assets/img/placeholder.gif'"/>
+  </figure>
+  <div class="name"> {{item.name || item.original_title}} </div>
+</div>
