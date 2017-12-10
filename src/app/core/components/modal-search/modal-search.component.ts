@@ -44,7 +44,7 @@ export class ModalSearchComponent implements OnInit {
 
     // Check the changes
     this.searchForm.valueChanges
-        .debounceTime(300)        // wait 600ms after each keystroke before considering the key
+        .debounceTime(500)        // wait 500ms after each keystroke before considering the key
         .distinctUntilChanged()   // ignore if next search query is same as previous
         .switchMap(query => this.searchService.search(query.key).catch(error => {
           this.results = [];
@@ -55,8 +55,6 @@ export class ModalSearchComponent implements OnInit {
             this.results = _.filter(result.results, function(o) {
               return o.media_type == "movie" || o.media_type == "tv"; 
             });
-
-            console.log(this.results);
           },
           error =>  {
             this.results = <any>error;

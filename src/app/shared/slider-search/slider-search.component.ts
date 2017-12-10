@@ -62,15 +62,11 @@ export class SliderSearchComponent implements OnInit, AfterViewInit, OnChanges, 
 
   // In base alla section passata dal componente padre effettuo la redirect
   onSelected(item: any) {
-    console.log("Pippo: " + JSON.stringify(item));
     // Destroy modal
     this.close.emit();
     // Redirect to detail
     item.type == "tv" && this.router.navigate(['/main/tv', item.id]);
     item.type == "movie" && this.router.navigate(['/main/movies', item.id]);
-
-    // this.section == "tv" && this.router.navigate(['/main/tv', id]);
-    // this.section == "actors" && console.log("Coming soon...");
   }
 
   ngOnDestroy() {

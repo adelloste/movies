@@ -11,26 +11,16 @@
           <div class="col-xs-12">
             <form class="form-search" autocomplete="off" [formGroup]="searchForm" novalidate>
               <div class="form-group input-group input-group-lg">
-                <input autofocus type="text" id="key" class="form-control" aria-describedby="basic-addon1" placeholder="Search for..." formControlName="key">
+                <input customFocus type="text" id="key" class="form-control" aria-describedby="basic-addon1" placeholder="Search for..." formControlName="key">
                 <span class="input-group-addon addon" id="basic-addon1"> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </span>
               </div>
             </form>
           </div>
         </div>
       </section>
-      
-      <!-- DA SISTEMARE - Creare nuovo componente che gestisce la chiusura del modale e il redirect -->
-      <!-- 
-      <section class="results-search" *ngIf="results.length > 0">
-        <slider [tvs]="results" [title]="'Results'" [all]="false" [url]="''"></slider>
-      </section>
-       -->
-      
       <section class="results-search" *ngIf="results.length > 0">
         <slider-search [tvs]="results" [title]="'Results'" (close)="close($event)"></slider-search>
       </section>
-
-
     </div>
   </div>
 </section>
