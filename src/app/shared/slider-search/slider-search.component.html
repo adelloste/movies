@@ -5,10 +5,7 @@
   <div class="swiper-container {{swiperId}}">
     <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let item of tvs">
-          <slide-two-thirds [item]="item"></slide-two-thirds>
-        </div>
-        <div class="swiper-slide swiper-three-quarters">
-          <slide-three-quarters [url]="url"></slide-three-quarters>
+          <slide-search [item]="item" (selected)="onSelected($event)"></slide-search>
         </div>
     </div>    
     <div class="swiper-button-prev swiper-button-white"></div>

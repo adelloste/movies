@@ -1,4 +1,10 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  Input, 
+  ChangeDetectionStrategy 
+} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'wall',
@@ -9,10 +15,15 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 export class WallComponent implements OnInit {
 
   @Input() items: string;
+  @Input() section: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onSelected(id: string) {
+    // In base alla section passata dal componente padre effettuo la redirect
+    this.section == "tv" && this.router.navigate(['/main/tv', id]);
   }
 
 }

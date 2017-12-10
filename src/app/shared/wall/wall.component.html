@@ -1,5 +1,5 @@
 <div class="center-wall">
   <div class="wrapper-slide-two-thirds" *ngFor="let item of items">
-    <slide-two-thirds [item]="item"></slide-two-thirds>
+    <slide-two-thirds [item]="item" (selected)="onSelected($event)"></slide-two-thirds>
   </div>
 </div>

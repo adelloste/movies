@@ -1,6 +1,8 @@
 import { 
   Component, 
   Input, 
+  Output,
+  EventEmitter,
   OnInit, 
   AfterViewInit, 
   OnChanges,
@@ -10,18 +12,18 @@ import {
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'slider',
-  templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss'],
+  selector: 'slider-search',
+  templateUrl: './slider-search.component.html',
+  styleUrls: ['./slider-search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SliderComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
+export class SliderSearchComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 
   @Input() tvs: any;
   @Input() title: string;
   @Input() section: string;
-  @Input() url: string;
-  @Input() all: boolean;
+
+  @Output() close: EventEmitter<any> = new EventEmitter();
 
   swiperId: string;
 
@@ -59,9 +61,12 @@ export class SliderComponent implements OnInit, AfterViewInit, OnChanges, OnDest
   }
 
   // In base alla section passata dal componente padre effettuo la redirect
-  onSelected(id: string) {
-    this.section == "tv" && this.router.navigate(['/main/tv', id]);
-    this.section == "actors" && console.log("Coming soon...");
+  onSelected(item: any) {
+    // Destroy modal
+    this.close.emit();
+    // Redirect to detail
+    item.type == "tv" && this.router.navigate(['/main/tv', item.id]);
+    item.type == "movie" && this.router.navigate(['/main/movies', item.id]);
   }
 
   ngOnDestroy() {

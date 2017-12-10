@@ -4,15 +4,15 @@
   <info-detail class="component-info" [detail]="detailTv"></info-detail>
 
   <section *ngIf="creditsTv.cast.length > 0">
-    <slider-detail [items]="creditsTv.cast" [title]="'Top Billed Cast'" [url]="'/main/tv/wall/popular'" [section]="true"></slider-detail>
+    <slider [tvs]="creditsTv.cast" [title]="'Top Billed Cast'" [section]="'actors'" [all]="false" [url]="''"></slider>
   </section>
 
-  <section>
-    <slider-detail [items]="similarTv.results" [title]="'Similar'" [url]="'/main/tv/wall/popular'" [section]="false"></slider-detail>
-  </section>
+  <section *ngIf="similarTv.results.length > 0">
+    <slider [tvs]="similarTv.results" [title]="'Similar'" [section]="'tv'" [all]="false" [url]="''"></slider>
+  </section> 
 
   <section *ngIf="recommendationsTv.results.length > 0">
-    <slider-detail [items]="recommendationsTv.results" [title]="'Recommendations'" [url]="'/main/tv/wall/popular'" [section]="false"></slider-detail>
+    <slider [tvs]="recommendationsTv.results" [title]="'Recommendations'" [section]="'tv'" [all]="false" [url]="''"></slider>
   </section>
 
 </section>

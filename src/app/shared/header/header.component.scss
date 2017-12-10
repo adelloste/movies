@@ -1,99 +1,14 @@
 @import '../../../variables';
 
+.navbar a {
+    color: $cloud;
+
+    &:hover, &:focus {
+        background-color: transparent;
+        color: white;
+    }
+}
+
 .navbar-brand {
     cursor: pointer;
-}
-
-.wrapper-avatar {
-    width: 50px;
-    margin-right: 35px;
-
-    img {
-        padding: 5px;
-    }
-}
-
-// Gestione sidenav
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1030;
-    top: 0;
-    left: 0;
-    background-color: $snow;
-    overflow-x: hidden;
-    transition: 0.5s;
-
-    a {
-        position: relative;
-        cursor: pointer;
-        user-select: none;
-        display: block;
-        height: 48px;
-        line-height: 48px;
-        padding: 0;
-        padding-left: 16px;
-        padding-right: 56px;
-        text-decoration: none;
-        clear: both;
-        font-weight: 500;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        -webkit-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
-        text-decoration: none;
-        color: $pitch-black;
-
-        i {
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 16px;
-            min-width: 40px;
-            width: 40px;
-            text-align: left;
-            font-size: 20px;
-        }
-
-        span {
-            display: inline-block;
-            vertical-align: middle;
-            position: relative;
-            top: 2px;
-        }
-    }
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.open {
-    width: 250px;
-}
-
-.background-sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 3;
-    top: 0;
-    left: 0;
-    background-color: $pitch-black;
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 1s;
-    z-index: 1030;
-}
-
-.open-background {
-    width: 100%;
-    opacity: 0.8;
 }

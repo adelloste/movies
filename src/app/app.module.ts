@@ -1,6 +1,7 @@
 import { LocalStorageModule }    from 'angular-2-local-storage';
 import { AngularFireModule }     from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ModalModule }           from 'ngx-bootstrap/modal';
 import { environment }           from '../environments/environment';
 
 import { BrowserModule }                       from '@angular/platform-browser';
@@ -32,7 +33,8 @@ export function appInitFactory(appInitService: AppInitService): Function {
     RoutingModule,
     LocalStorageModule.withConfig({ prefix: '', storageType: 'sessionStorage'}),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ModalModule.forRoot()
   ],
   declarations: [
     AppComponent

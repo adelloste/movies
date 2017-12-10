@@ -2,12 +2,13 @@
   <h1 class="title-section">
     {{title}}
   </h1>
-  <div class="swiper-container">
+  <div class="swiper-container {{swiperId}}">
     <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let item of tvs">
-          <slide-two-thirds [item]="item"></slide-two-thirds>
+          <slide-two-thirds [item]="item" (selected)="onSelected($event)" *ngIf="section != 'actors'"></slide-two-thirds>
+          <slide-credit [item]="item" (selected)="onSelected($event)" *ngIf="section == 'actors'"></slide-credit>
         </div>
-        <div class="swiper-slide swiper-three-quarters">
+        <div class="swiper-slide swiper-three-quarters" *ngIf="all">
           <slide-three-quarters [url]="url"></slide-three-quarters>
         </div>
     </div>    

@@ -94,6 +94,12 @@ export const environment = {
       method: "GET", 
       timeout: 30000, 
       uri: "/tv/{TV_ID}/recommendations" 
-    } 
+    },
+    search: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/search/multi" 
+    }  
   }
 };

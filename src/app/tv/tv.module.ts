@@ -8,8 +8,7 @@ import { TopRatedTvResolverService }    from './services/top-rated-tv-resolver.s
 import { AiringTodayTvResolverService } from './services/airing-today-tv-resolver.service';
 import { OnTheAirTvResolverService }    from './services/on-the-air-tv-resolver.service';
 
-import { TvComponent }     from './tv.component';
-import { SliderComponent } from './components/slider/slider.component';
+import { TvComponent } from './tv.component';
 
 @NgModule({
   imports: [
@@ -17,8 +16,7 @@ import { SliderComponent } from './components/slider/slider.component';
     TvRoutingModule
   ],
   declarations: [
-    TvComponent,
-    SliderComponent
+    TvComponent
   ],
   providers: [
     PopularTvResolverService,

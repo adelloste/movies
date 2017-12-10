@@ -29,6 +29,39 @@ body {
     padding: 60px 10px 0;
 }
 
+.bg-full {
+    background-color: $dusk;
+}
+
+.color-full {
+    color: $dusk;
+}
+
+.border-full {
+    color: $dusk;
+}
+
+// Modal search fullscreen
+.modal-dialog-custom {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    .modal-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+        background: rgba(0, 0, 0, .8);
+    }
+}
+
 // Remove yellow color Chrome
 input {
     -webkit-box-shadow: 0 0 0px 1000px $snow inset;

@@ -65,6 +65,12 @@ export const environment = {
       method: "GET",
       timeout: 30000,
       uri: "/tv/on_the_air"
-    }
+    },
+    search: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/search/multi" 
+    } 
   }
 };

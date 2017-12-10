@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SliderDetailComponent } from './slider-detail.component';
+import { ModalSearchComponent } from './modal-search.component';
 
-describe('SliderDetailComponent', () => {
-  let component: SliderDetailComponent;
-  let fixture: ComponentFixture<SliderDetailComponent>;
+describe('ModalSearchComponent', () => {
+  let component: ModalSearchComponent;
+  let fixture: ComponentFixture<ModalSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SliderDetailComponent ]
+      declarations: [ ModalSearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SliderDetailComponent);
+    fixture = TestBed.createComponent(ModalSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

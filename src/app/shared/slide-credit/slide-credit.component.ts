@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  Input, 
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy 
+} from '@angular/core';
 
 @Component({
   selector: 'slide-credit',
@@ -10,8 +17,14 @@ export class SlideCreditComponent implements OnInit {
 
   @Input() item: any;
 
+  @Output() selected: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() { }
+
+  go(id: string) {
+    this.selected.emit(id);
+  }
 
 }
