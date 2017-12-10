@@ -3,9 +3,11 @@ import {
   Input, 
   OnInit, 
   AfterViewInit, 
+  OnChanges,
   OnDestroy,
   ChangeDetectionStrategy
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'slider',
@@ -13,15 +15,17 @@ import {
   styleUrls: ['./slider.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
+export class SliderComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 
   @Input() tvs: any;
   @Input() title: string;
+  @Input() section: string;
   @Input() url: string;
+  @Input() all: boolean;
 
   swiperId: string;
 
-  constructor() {
+  constructor(private router: Router) {
     // Generate random id
     this.swiperId = "swiper-" + Math.floor(Math.random() * 1000);
   }
@@ -42,6 +46,22 @@ export class SliderComponent implements OnInit, AfterViewInit, OnDestroy {
       observer: true,
       observeParents: true
     });
+  }
+
+  ngOnChanges() {
+    // Intercept input property changes and update swiper instance
+    if(this[this.swiperId]) {
+      setTimeout(() => {
+        this[this.swiperId].update();
+        this[this.swiperId].slideTo(0);
+      }, 0);
+    }
+  }
+
+  // In base alla section passata dal componente padre effettuo la redirect
+  onSelected(id: string) {
+    this.section == "tv" && this.router.navigate(['/main/tv', id]);
+    this.section == "actors" && console.log("Coming soon...");
   }
 
   ngOnDestroy() {

@@ -2,6 +2,7 @@
 
 .slide-two-thirds {
     transition: all .2s ease-in;
+    cursor: pointer;
 
     &:hover {
         transform: scale3d(1.15, 1.10, 1);
@@ -12,16 +13,16 @@
     .poster {
         margin: 0;
         position: relative;
-        height: 270px;
+        height: 260px;
 
         // Smartphone
         @media (max-width: $screen-xs-max) {
-            height: 145px;
+            height: 135px;
         }
 
         // Tablet
         @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-            height: 220px;
+            height: 210px;
         }
 
         img {
@@ -46,5 +47,10 @@
         text-overflow: ellipsis;
         background: $pitch-black;
         text-align: left;
+
+        @media (max-width: $screen-xs-max) {
+            height: 40px;
+            line-height: 40px;
+        }
     }
 }

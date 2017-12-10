@@ -1,8 +1,6 @@
-<div class="slide-two-thirds">
-  <a>
-    <figure class="poster">
-        <img [src]="item.profile_path ? 'https://image.tmdb.org/t/p/w185' + item.profile_path : 'assets/img/placeholder.gif'"/>
-    </figure>
-    <div class="name"> {{item.name}} </div>
-  </a>
+<div class="slide-two-thirds" (click)="go(item.id)">
+  <figure class="poster">
+      <img [src]="item.profile_path ? 'https://image.tmdb.org/t/p/w185' + item.profile_path : 'assets/img/placeholder.gif'"/>
+  </figure>
+  <div class="name"> {{item.name}} </div>
 </div>
