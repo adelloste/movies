@@ -9,6 +9,7 @@ import { ModalSearchComponent } from './components/modal-search/modal-search.com
 
 import { LoaderManagerService }  from './services/loader-manager.service';
 import { StorageManagerService } from './services/storage-manager.service';
+import { DomService }            from './services/dom.service';
 
 import { SearchService }        from './services/search.service';
 import { AiringTodayTvService } from './services/airing-today-tv.service';
@@ -33,6 +34,7 @@ import { OnTheAirTvService }    from './services/on-the-air-tv.service';
   providers: [
     LoaderManagerService,
     StorageManagerService,
+    DomService,
     SearchService,
     AiringTodayTvService,
     PopularTvService,
