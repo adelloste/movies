@@ -1,14 +1,10 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MainComponent }        from './main.component';
-import { MainGuard }            from './main.guard';
-import { MoviesComponent }      from '../movies/movies.component';
-import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
+import { MainComponent } from './main.component';
+import { MainGuard }     from './main.guard';
 
-import { MovieResolverService }               from '../movie-detail/services/movie-resolver.service';
-import { MovieCreditsResolverService }        from '../movie-detail/services/movie-credits-resolver.service';
-import { MovieRecommendationResolverService } from '../movie-detail/services/movie-recommendation-resolver.service';
+import { MoviesComponent } from '../movies/movies.component';
 
 @NgModule({
   imports: [
@@ -47,17 +43,12 @@ import { MovieRecommendationResolverService } from '../movie-detail/services/mov
             loadChildren: '../tv-wall-on-the-air/tv-wall-on-the-air.module#TvWallOnTheAirModule'
           },
           {
-            path: 'movies',
+            path: 'movie',
             component: MoviesComponent
           },
           {
-            path: 'movies/:id',
-            component: MovieDetailComponent,
-            resolve: {
-              movie: MovieResolverService,
-              credits: MovieCreditsResolverService,
-              recommendation: MovieRecommendationResolverService
-            }
+            path: 'movie/:id',
+            loadChildren: '../movie-detail/movie-detail.module#MovieDetailModule'
           }
         ]
       }

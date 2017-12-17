@@ -12,7 +12,7 @@ export class MovieRecommendationService {
   constructor(private http: HttpClient) { }
   
   getRecommendation(index:number): Observable<Recommendations> {
-    return this.http.get<Recommendations>(environment.api.baseUrl + environment.api.popularRecommendation.uri.replace("{MOVIE_ID}", index.toString()))
+    return this.http.get<Recommendations>(environment.api.baseUrl + environment.api.recommendationsMOVIE.uri.replace("{MOVIE_ID}", index.toString()))
   }
 
 }

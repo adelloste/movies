@@ -1,71 +1,10 @@
 @import '../../variables';
 
-.movie-container {
+.movie-detail-container {
     overflow-x: hidden;
 
-    .movie-wrapper {
+    .component-info {
         position: relative;
-        min-height: 350px;
-        color: $snow;
-        
-        .bg-img {
-            -webkit-filter: grayscale(100%) brightness(65%) contrast(100%);
-            -moz-filter: grayscale(100%) brightness(65%) contrast(100%);
-            -ms-filter: grayscale(100%) brightness(65%) contrast(100%);
-            -o-filter: grayscale(100%) brightness(65%) contrast(100%);
-            filter: grayscale(100%) brightness(65%) contrast(100%);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: 50% 40%;
-            background-color: $gray-light;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-        }
-
-        .col-poster {
-            @media (max-width: $screen-xs-max) {
-                display: none;
-            }
-
-            .poster {
-                padding: 5%;
-            }
-        }
-    }
-
-    .divider {
-        height: 60px;
-        border-top: 1px solid $divider;
-        border-bottom: 1px solid $divider;
-    }
-
-    .card-actor {
-        height: 300px;
-        margin-bottom: 10px;
-        border: 1px solid $border;
-        padding-bottom: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        background-color: $white;
-
-        img {
-            transition: opacity .3s;
-            height: 200px;
-            margin: 0;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        > p {
-            margin: 0;
-            padding: 6px 10px 0 10px;
-        }
-
-        .name {
-            font-weight: bold;
-        }
+        top: -50px;
     }
 }

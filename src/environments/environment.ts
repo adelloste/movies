@@ -23,19 +23,25 @@ export const environment = {
       timeout: 30000,
       uri: "/movie/popular"
     },
-    popularDetail: {
+    detailMOVIE: {
       contentType: "application/json",
       method: "GET",
       timeout: 30000,
       uri: "/movie/{MOVIE_ID}"
     },
-    popularCredits: {
+    creditsMOVIE: {
       contentType: "application/json",
       method: "GET",
       timeout: 30000,
       uri: "/movie/{MOVIE_ID}/credits"
     },
-    popularRecommendation: {
+    similarMOVIE: { 
+      contentType: "application/json", 
+      method: "GET", 
+      timeout: 30000, 
+      uri: "/movie/{TV_ID}/similar" 
+    }, 
+    recommendationsMOVIE: {
       contentType: "application/json",
       method: "GET",
       timeout: 30000,

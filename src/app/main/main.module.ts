@@ -5,7 +5,6 @@ import { MainGuard }         from './main.guard';
 import { MainRoutingModule } from './main-routing.module';
 
 import { MoviesModule } from '../movies/movies.module';
-import { MovieModule }  from '../movie-detail/movie.module';
 
 import { MainComponent } from './main.component';
 
@@ -13,8 +12,7 @@ import { MainComponent } from './main.component';
   imports: [
     SharedModule,
     MainRoutingModule,
-    MoviesModule,
-    MovieModule
+    MoviesModule
   ],
   declarations: [
     MainComponent

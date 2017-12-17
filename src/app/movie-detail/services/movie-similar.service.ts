@@ -2,17 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
 
-import { Movie } from '../models/movie-detail';
+import { Similars } from '../models/similars';
 
 import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class MovieService {
+export class MovieSimilarService {
 
   constructor(private http: HttpClient) { }
   
-  getMovie(index:number): Observable<Movie> {
-    return this.http.get<Movie>(environment.api.baseUrl + environment.api.detailMOVIE.uri.replace("{MOVIE_ID}", index.toString()))
+  getSimilarMovie(index:number): Observable<Similars> {
+    return this.http.get<Similars>(environment.api.baseUrl + environment.api.similarMOVIE.uri.replace("{TV_ID}", index.toString()));
   }
 
 }

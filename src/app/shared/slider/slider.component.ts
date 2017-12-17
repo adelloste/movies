@@ -9,6 +9,10 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { DomService } from '../../core/services/dom.service';
+
+import { ToastComponent } from '../toast/toast.component';
+
 @Component({
   selector: 'slider',
   templateUrl: './slider.component.html',
@@ -25,7 +29,7 @@ export class SliderComponent implements OnInit, AfterViewInit, OnChanges, OnDest
 
   swiperId: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private domService: DomService) {
     // Generate random id
     this.swiperId = "swiper-" + Math.floor(Math.random() * 1000);
   }
@@ -60,8 +64,14 @@ export class SliderComponent implements OnInit, AfterViewInit, OnChanges, OnDest
 
   // In base alla section passata dal componente padre effettuo la redirect
   onSelected(id: string) {
-    this.section == "tv" && this.router.navigate(['/main/tv', id]);
+    this.section == "movie"  && this.router.navigate(['/main/movie', id]);
+    this.section == "tv"     && this.router.navigate(['/main/tv', id]);
     this.section == "actors" && console.log("Coming soon...");
+
+    if(this.section == "actors") {
+      this.domService.appendComponentToBody(ToastComponent);
+    }
+
   }
 
   ngOnDestroy() {
