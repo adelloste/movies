@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
       // Save user in storage
       this.storageManagerService.store("user", {email: user.getEmail, signin: true});
       // Redirect to dashboard
-      this.router.navigate(['/main/movies']);
+      this.router.navigate(['/main/movie']);
     })
     .catch((error) => {
       // hide loader

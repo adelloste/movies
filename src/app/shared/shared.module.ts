@@ -65,7 +65,11 @@ import { ToastComponent } from './toast/toast.component';
     TruncatePipe,
     SliderSearchComponent,
     SlideSearchComponent,
-    AutofocusDirective
+    AutofocusDirective,
+    ToastComponent
+  ],
+  entryComponents: [
+    ToastComponent
   ],
   providers: [
     AuthService,

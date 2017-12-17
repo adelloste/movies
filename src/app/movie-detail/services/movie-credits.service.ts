@@ -12,7 +12,7 @@ export class MovieCreditsService {
   constructor(private http: HttpClient) { }
   
   getCredits(index:number): Observable<Credits> {
-    return this.http.get<Credits>(environment.api.baseUrl + environment.api.popularCredits.uri.replace("{MOVIE_ID}", index.toString()))
+    return this.http.get<Credits>(environment.api.baseUrl + environment.api.creditsMOVIE.uri.replace("{MOVIE_ID}", index.toString()))
   }
 
 }
