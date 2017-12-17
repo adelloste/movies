@@ -66,7 +66,7 @@ export class SliderSearchComponent implements OnInit, AfterViewInit, OnChanges, 
     this.close.emit();
     // Redirect to detail
     item.type == "tv" && this.router.navigate(['/main/tv', item.id]);
-    item.type == "movie" && this.router.navigate(['/main/movies', item.id]);
+    item.type == "movie" && this.router.navigate(['/main/movie', item.id]);
   }
 
   ngOnDestroy() {
