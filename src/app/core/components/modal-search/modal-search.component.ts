@@ -12,6 +12,7 @@ import { Subject }    from 'rxjs/Subject';
 import 'rxjs/add/observable/of';
 
 // Observable operators
+import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
