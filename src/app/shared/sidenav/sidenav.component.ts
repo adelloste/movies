@@ -11,8 +11,8 @@ import { SidenavService } from '../services/sidenav.service';
 })
 export class SidenavComponent implements OnDestroy {
   
-  private active: boolean = false;
-  private subscription: Subscription;
+  active       : boolean = false;
+  subscription : Subscription;
 
   constructor(private sidenavService: SidenavService) {
     this.subscription = sidenavService.status$.subscribe(data => { this.sidenav(); });

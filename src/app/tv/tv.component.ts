@@ -15,11 +15,11 @@ import { AiringTodayTvs } from '../core/models/airing-today-tvs';
 })
 export class TvComponent implements OnInit {
 
-  popularTVs: PopularTvs;
-  topRatedTVs: TopRatedTvs;
-  airingTodayTVs: AiringTodayTvs;
-  onTheAirTVs: OnTheAirTvs;
-  errorMessage: string;
+  popularTVs     : PopularTvs;
+  topRatedTVs    : TopRatedTvs;
+  airingTodayTVs : AiringTodayTvs;
+  onTheAirTVs    : OnTheAirTvs;
+  errorMessage   : string;
 
   constructor(private route: ActivatedRoute, private loaderManagerService: LoaderManagerService) { }
 

@@ -15,11 +15,11 @@ import { TvRecommendations } from './models/tv-recommendations';
 })
 export class TvDetailComponent implements OnInit {
 
-  detailTv: TvDetails;
-  creditsTv: TvCredits;
-  similarTv: TvSimilars;
-  recommendationsTv: TvRecommendations;
-  errorMessage: string;
+  detailTv          : TvDetails;
+  creditsTv         : TvCredits;
+  similarTv         : TvSimilars;
+  recommendationsTv : TvRecommendations;
+  errorMessage      : string;
 
   constructor(private route: ActivatedRoute, private loaderManagerService: LoaderManagerService) { }
 

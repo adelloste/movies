@@ -3,6 +3,11 @@ import { ActivatedRoute, Params }       from '@angular/router';
 
 import { LoaderManagerService } from '../core/services/loader-manager.service';
 
+import { PopularMovies }    from '../core/models/popular-movies';
+import { NowPlayingMovies } from '../core/models/now-playing-movies';
+import { TopRatedMovies }   from '../core/models/top-rated-movies';
+import { UpcomingMovies }   from '../core/models/upcoming-movies';
+
 @Component({
   selector: 'movies',
   templateUrl: './movies.component.html',
@@ -10,10 +15,10 @@ import { LoaderManagerService } from '../core/services/loader-manager.service';
 })
 export class MoviesComponent implements OnInit {
 
-  popularMovies    : any;
-  nowPlayingMovies : any;
-  topRatedMovies   : any;
-  upcomingMovies   : any;
+  popularMovies    : PopularMovies;
+  nowPlayingMovies : NowPlayingMovies;
+  topRatedMovies   : TopRatedMovies;
+  upcomingMovies   : UpcomingMovies;
   errorMessage     : string;
 
   constructor(
