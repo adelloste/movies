@@ -4,8 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { MainGuard }     from './main.guard';
 
-import { MoviesComponent } from '../movies/movies.component';
-
 @NgModule({
   imports: [
     RouterModule.forChild([
@@ -44,12 +42,28 @@ import { MoviesComponent } from '../movies/movies.component';
           },
           {
             path: 'movie',
-            component: MoviesComponent
+            loadChildren: '../movies/movies.module#MoviesModule'
           },
           {
             path: 'movie/:id',
             loadChildren: '../movie-detail/movie-detail.module#MovieDetailModule'
-          }
+          },
+          {
+            path: 'movie/wall/popular',
+            loadChildren: '../movie-wall-popular/movie-wall-popular.module#MovieWallPopularModule'
+          },
+          {
+            path: 'movie/wall/toprated',
+            loadChildren: '../movie-wall-top-rated/movie-wall-top-rated.module#MovieWallTopRatedModule'
+          },
+          {
+            path: 'movie/wall/upcoming',
+            loadChildren: '../movie-wall-upcoming/movie-wall-upcoming.module#MovieWallUpcomingModule'
+          },
+          {
+            path: 'movie/wall/nowplaying',
+            loadChildren: '../movie-wall-now-playing/movie-wall-now-playing.module#MovieWallNowPlayingModule'
+          },
         ]
       }
     ])

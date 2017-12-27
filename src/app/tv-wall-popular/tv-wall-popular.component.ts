@@ -33,8 +33,8 @@ export class TvWallPopularComponent implements OnInit {
   getPopularTv() {
     this.route.data.subscribe(
       (data: { popularTV: PopularTvs }) => {
-        this.series = this.series.concat(data.popularTV["results"]);
-        this.totalPages = data.popularTV["total_pages"];
+        this.series = this.series.concat(data.popularTV.results);
+        this.totalPages = data.popularTV.total_pages;
       },
       error =>  {
         this.errorMessage = <any>error
@@ -46,7 +46,7 @@ export class TvWallPopularComponent implements OnInit {
     this.popularTvService.getPopularTV(this.index).subscribe(
       tvs => {
         this.loaderManagerService.changeStatus(false);
-        this.series = this.series.concat(tvs["results"]);
+        this.series = this.series.concat(tvs.results);
         this.index++;
         this.isLoading = false;
       },
@@ -70,5 +70,4 @@ export class TvWallPopularComponent implements OnInit {
       }
     }
   }
-
 }

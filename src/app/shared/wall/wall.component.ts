@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
 })
 export class WallComponent implements OnInit {
 
-  @Input() items: string;
-  @Input() section: string;
+  @Input() items   : string;
+  @Input() section : string;
 
   constructor(private router: Router) { }
 
@@ -24,6 +24,7 @@ export class WallComponent implements OnInit {
   onSelected(id: string) {
     // In base alla section passata dal componente padre effettuo la redirect
     this.section == "tv" && this.router.navigate(['/main/tv', id]);
+    this.section == "movie" && this.router.navigate(['/main/movie', id]);
   }
 
 }

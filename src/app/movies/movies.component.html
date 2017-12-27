@@ -1,13 +1,12 @@
-<!-- <search></search> -->
-
-<div class="row movies-list">
-  <card *ngFor="let movie of movies"
-      [movie]="movie">
-  </card>
-</div>
-
-<pagination *ngIf="movies.length > 0"
-            [currentPage]="currentPage"
-            [totalPage]="totalPage"
-            (changePage)="changePage($event)">
-</pagination>
+<section *ngIf="popularMovies.results.length > 0">
+  <slider [tvs]="popularMovies.results" [title]="'Most popular movies'" [section]="'movie'" [all]="true" [url]="'/main/movie/wall/popular'"></slider>
+</section>
+<section *ngIf="topRatedMovies.results.length > 0">
+  <slider [tvs]="topRatedMovies.results" [title]="'Top rated movies'" [section]="'movie'" [all]="true" [url]="'/main/movie/wall/toprated'"></slider>
+</section>
+<section *ngIf="nowPlayingMovies.results.length > 0">
+  <slider [tvs]="nowPlayingMovies.results" [title]="'Now Playing movies'" [section]="'movie'" [all]="true" [url]="'/main/movie/wall/nowplaying'"></slider>
+</section> 
+<section *ngIf="upcomingMovies.results.length > 0">
+  <slider [tvs]="upcomingMovies.results" [title]="'Upcoming movies'" [section]="'movie'" [all]="true" [url]="'/main/movie/wall/upcoming'"></slider>
+</section>

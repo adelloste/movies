@@ -17,11 +17,29 @@ export const environment = {
     apiKey: "2764fa87647fd7536e839ea8826eb796",
     baseUrl: 'https://api.themoviedb.org/3',
     language: 'en-US',
-    popular: {
+    popularMOVIES: {
       contentType: "application/json",
       method: "GET",
       timeout: 30000,
       uri: "/movie/popular"
+    },
+    nowPlayingMOVIES: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/movie/now_playing"
+    },
+    topRatedMOVIES: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/movie/top_rated"
+    },
+    upcomingMOVIES: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/movie/upcoming"
     },
     detailMOVIE: {
       contentType: "application/json",
