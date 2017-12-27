@@ -1,17 +1,23 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header pull-left">
+<nav class="navbar navbar-fixed-top bg-full color-full">
+  <div class="container-fluid">
+    <div class="navbar-header pull-left visible-xs">
       <a class="navbar-brand" (click)="sidenav()">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
       </a>
     </div>
+    <ul class="nav navbar-nav hidden-xs">
+      <li><a routerLink="/main/movie" routerLinkActive="active">MOVIES</a></li>
+      <li><a routerLink="/main/tv" routerLinkActive="active">TV SERIES</a></li>
+      <li><a routerLink="/main/info" routerLinkActive="active">INFO</a></li>
+    </ul>
     <div class="navbar-header pull-right">
-      <ul class="nav navbar-right">
-        <li>
-          <div class="wrapper-avatar">
-            <img class="img-responsive img-circle center-block" src="./assets/img/avatar.png">
-          </div>
-        </li>
-      </ul>
+      <a class="navbar-brand" (click)="search()">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </a>
+      <a class="navbar-brand" (click)="logout()">
+        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+      </a>
     </div>
-</div>
+  </div>
+</nav>
 

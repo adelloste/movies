@@ -23,7 +23,7 @@ export class MainComponent implements OnInit, OnDestroy {
   scrollTop() {
     this.routerSubscription = this.router.events
         .filter(event => event instanceof NavigationEnd)
-        .subscribe(event => { document.body.scrollTop = 0; });
+        .subscribe(event => { window.scrollTo(0, 0); });
   }
 
   ngOnDestroy() {

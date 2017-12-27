@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router }            from '@angular/router';
+
+import { LoaderManagerService }   from '../core/services/loader-manager.service';
 
 @Component({
   selector: 'not-found',
@@ -8,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loaderManagerService: LoaderManagerService) { }
 
   ngOnInit() {
+    this.loaderManagerService.changeStatus(false);
   }
 
   goBack() {

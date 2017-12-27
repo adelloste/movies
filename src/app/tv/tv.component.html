@@ -1,0 +1,13 @@
+<section *ngIf="popularTVs.results.length > 0">
+  <slider [tvs]="popularTVs.results" [title]="'Most popular TV series'" [section]="'tv'" [all]="true" [url]="'/main/tv/wall/popular'"></slider>
+</section>
+<section *ngIf="topRatedTVs.results.length > 0">
+  <slider [tvs]="topRatedTVs.results" [title]="'Top rated TV series'" [section]="'tv'" [all]="true" [url]="'/main/tv/wall/toprated'"></slider>
+</section>
+<section *ngIf="airingTodayTVs.results.length > 0">
+  <slider [tvs]="airingTodayTVs.results" [title]="'Airing today TV series'" [section]="'tv'" [all]="true" [url]="'/main/tv/wall/airingtoday'"></slider>
+</section> 
+<section *ngIf="onTheAirTVs.results.length > 0">
+  <slider [tvs]="onTheAirTVs.results" [title]="'On the air TV series'" [section]="'tv'" [all]="true" [url]="'/main/tv/wall/ontheair'"></slider>
+</section>
+

@@ -1,50 +1,58 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Params }       from '@angular/router';
 
-import { Movies }                 from './models/movies';
-import { Movie }                  from './models/movie';
-import { MoviesService }          from './services/movies.service';
-import { IndexPaginationService } from './services/index-pagination.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
+
+import { PopularMovies }    from '../core/models/popular-movies';
+import { NowPlayingMovies } from '../core/models/now-playing-movies';
+import { TopRatedMovies }   from '../core/models/top-rated-movies';
+import { UpcomingMovies }   from '../core/models/upcoming-movies';
 
 @Component({
   selector: 'movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MoviesComponent implements OnInit, OnDestroy {
+export class MoviesComponent implements OnInit {
 
-  currentPage: number;
-  totalPage: number;
-  movies: Array<Movie> = [];
-  errorMessage: string;
+  popularMovies    : PopularMovies;
+  nowPlayingMovies : NowPlayingMovies;
+  topRatedMovies   : TopRatedMovies;
+  upcomingMovies   : UpcomingMovies;
+  errorMessage     : string;
 
-  constructor(private indexPaginationService: IndexPaginationService, private moviesService: MoviesService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
-    this.getMovies(this.indexPaginationService.index);
+    this.loaderManagerService.changeStatus(false);
+
+    this.getPopularMovies();
+    this.getNowPlayingMovies();
+    this.getTopRatedMovies();
+    this.getUpcomingMovies();
   }
 
-  // When destroy the component, remember the current page
-  ngOnDestroy() {
-    this.indexPaginationService.index = this.currentPage;
+  getPopularMovies() {
+    this.route.data
+        .subscribe((data: { popularMovies: any }) => { this.popularMovies = data.popularMovies; }, error =>  this.errorMessage = <any>error);
   }
 
-  // Retrieve movies from server
-  getMovies(index: number) {
-    this.moviesService.getMovies(index).subscribe(movies => {
-
-      this.movies      = movies["results"];
-      this.currentPage = movies["page"];
-      this.totalPage   = movies["total_pages"];
-      
-      // Scroll top view
-      window.scrollTo(0, 0);
-
-    }, error =>  this.errorMessage = <any>error);
+  getNowPlayingMovies() {
+    this.route.data
+        .subscribe((data: { nowPlayingMovies: any }) => { this.nowPlayingMovies = data.nowPlayingMovies; }, error =>  this.errorMessage = <any>error);
   }
 
-  // Change page
-  changePage(index: number) {
-    this.getMovies(index);
+  getTopRatedMovies() {
+    this.route.data
+        .subscribe((data: { topRatedMovies: any }) => { this.topRatedMovies = data.topRatedMovies; }, error =>  this.errorMessage = <any>error);
+  }
+
+  getUpcomingMovies() {
+    this.route.data
+        .subscribe((data: { upcomingMovies: any }) => { this.upcomingMovies = data.upcomingMovies; }, error =>  this.errorMessage = <any>error);
   }
 }
 

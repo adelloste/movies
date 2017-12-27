@@ -1,48 +1,69 @@
 import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MainComponent }        from './main.component';
-import { MainGuard }            from './main.guard';
-import { InfoComponent }        from '../info/info.component';
-import { MoviesComponent }      from '../movies/movies.component';
-import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
-
-import { MovieResolverService }               from '../movie-detail/services/movie-resolver.service';
-import { MovieCreditsResolverService }        from '../movie-detail/services/movie-credits-resolver.service';
-import { MovieRecommendationResolverService } from '../movie-detail/services/movie-recommendation-resolver.service';
+import { MainComponent } from './main.component';
+import { MainGuard }     from './main.guard';
 
 @NgModule({
   imports: [
-    CommonModule,
     RouterModule.forChild([
       { 
-        path: 'main',
+        path: '',
         component: MainComponent,
         canActivate: [ MainGuard ],
         children: [
           {
-            path: '', 
-            redirectTo: 'info', 
-            pathMatch: 'full' 
-          },
-          {
             path: 'info',
-            component: InfoComponent
+            loadChildren: '../info/info.module#InfoModule'
           },
           {
-            path: 'movies',
-            component: MoviesComponent
+            path: 'tv',
+            loadChildren: '../tv/tv.module#TvModule'
           },
           {
-            path: 'movies/:id',
-            component: MovieDetailComponent,
-            resolve: {
-              movie: MovieResolverService,
-              credits: MovieCreditsResolverService,
-              recommendation: MovieRecommendationResolverService
-            }
-          }
+            path: 'tv/:id',
+            loadChildren: '../tv-detail/tv-detail.module#TvDetailModule'
+          },
+          {
+            path: 'tv/wall/popular',
+            loadChildren: '../tv-wall-popular/tv-wall-popular.module#TvWallPopularModule'
+          },
+          {
+            path: 'tv/wall/toprated',
+            loadChildren: '../tv-wall-top-rated/tv-wall-top-rated.module#TvWallTopRatedModule'
+          },
+          {
+            path: 'tv/wall/airingtoday',
+            loadChildren: '../tv-wall-airing-today/tv-wall-airing-today.module#TvWallAiringTodayModule'
+          },
+          {
+            path: 'tv/wall/ontheair',
+            loadChildren: '../tv-wall-on-the-air/tv-wall-on-the-air.module#TvWallOnTheAirModule'
+          },
+          {
+            path: 'movie',
+            loadChildren: '../movies/movies.module#MoviesModule'
+          },
+          {
+            path: 'movie/:id',
+            loadChildren: '../movie-detail/movie-detail.module#MovieDetailModule'
+          },
+          {
+            path: 'movie/wall/popular',
+            loadChildren: '../movie-wall-popular/movie-wall-popular.module#MovieWallPopularModule'
+          },
+          {
+            path: 'movie/wall/toprated',
+            loadChildren: '../movie-wall-top-rated/movie-wall-top-rated.module#MovieWallTopRatedModule'
+          },
+          {
+            path: 'movie/wall/upcoming',
+            loadChildren: '../movie-wall-upcoming/movie-wall-upcoming.module#MovieWallUpcomingModule'
+          },
+          {
+            path: 'movie/wall/nowplaying',
+            loadChildren: '../movie-wall-now-playing/movie-wall-now-playing.module#MovieWallNowPlayingModule'
+          },
         ]
       }
     ])

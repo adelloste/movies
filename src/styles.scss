@@ -29,6 +29,39 @@ body {
     padding: 60px 10px 0;
 }
 
+.bg-full {
+    background-color: $pitch-black;
+}
+
+.color-full {
+    color: $pitch-black;
+}
+
+.border-full {
+    color: $pitch-black;
+}
+
+// Modal search fullscreen
+.modal-dialog-custom {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    .modal-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+        background: rgba(0, 0, 0, .8);
+    }
+}
+
 // Remove yellow color Chrome
 input {
     -webkit-box-shadow: 0 0 0px 1000px $snow inset;
@@ -40,65 +73,10 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
-// Overlay loading app
-.overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 2000000;
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: rgba(0,0,0,.3);
-
-    .spinner {
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-    .double-bounce1, .double-bounce2 {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #333;
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
-        
-        -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-        animation: sk-bounce 2.0s infinite ease-in-out;
-        }
-
-        .double-bounce2 {
-        -webkit-animation-delay: -1.0s;
-        animation-delay: -1.0s;
-        }
-    }
-
-    @-webkit-keyframes sk-bounce {
-        0%, 100% {
-            -webkit-transform: scale(0.0)
-        } 50% { 
-            -webkit-transform: scale(1.0)
-        }
-    }
-
-    @keyframes sk-bounce {
-        0%, 100% { 
-            transform: scale(0.0);
-            -webkit-transform: scale(0.0);
-        } 50% { 
-            transform: scale(1.0);
-            -webkit-transform: scale(1.0);
-        }
-    }
+.bg-login {
+    background: url('https://trakt.tv/assets/auth/breaking-bad-blur-23a8acffe8b2e154befc3a1d6dd7285d.jpg.webp') no-repeat center center fixed;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
 }
-

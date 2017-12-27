@@ -9,7 +9,7 @@ import { LoginComponent } from './login.component';
     CommonModule,
     RouterModule.forChild([
       { 
-        path: 'login',
+        path: '',
         component: LoginComponent
       }
     ])

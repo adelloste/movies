@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { StorageManagerService } from "../shared/services/storage-manager.service";
+import { StorageManagerService } from "../core/services/storage-manager.service";
 
 @Injectable()
 export class MainGuard implements CanActivate {

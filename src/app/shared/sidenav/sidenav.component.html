@@ -1,26 +1,24 @@
 <div class="background-sidenav" [ngClass]="{'open-background': active }" (click)="sidenav()"></div>
 
 <div id="mySidenav" class="sidenav" [ngClass]="{'open': active }">
-  <div class="sidebar-header header-cover">
-    <img class="img-responsive center-block" src="https://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg">
-  </div>
+  <div class="sidebar-header header-cover"></div>
   <ul class="nav sidebar-nav">
     <li>
       <a routerLink="/main/movies" routerLinkActive="active" (click)="sidenav()">
         <i class="glyphicon glyphicon-film" aria-hidden="true"></i>
-        <span>Movies</span>
+        <span>MOVIES</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/main/tv" routerLinkActive="active" (click)="sidenav()">
+        <i class="glyphicon glyphicon-facetime-video" aria-hidden="true"></i>
+        <span>TV SERIES</span>
       </a>
     </li>
     <li>
       <a routerLink="/main/info" routerLinkActive="active" (click)="sidenav()">
         <i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
-        <span>Info</span>
-      </a>
-    </li>
-    <li>
-      <a (click)="logout()">
-        <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>
-        <span>Logout</span>
+        <span>INFO</span>
       </a>
     </li>
   </ul>

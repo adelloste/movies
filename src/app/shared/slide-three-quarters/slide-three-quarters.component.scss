@@ -1,0 +1,56 @@
+@import '../../../variables';
+
+.slide-three-quarters {
+    transition: all .2s ease-in;
+    
+    &:hover {
+        transform: scale3d(1.15, 1.10, 1);
+        box-shadow: 0 3px 5px 0 rgba(0, 16, 19, .75);
+        z-index: 10;
+    }
+    
+    .poster {
+        cursor: pointer;
+        margin: 0;
+        position: relative;
+        height: 260px;
+
+        // Smartphone
+        @media (max-width: $screen-xs-max) {
+            height: 135px;
+        }
+
+        // Tablet
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            height: 210px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            -o-object-fit: fill;
+               object-fit: fill;
+        }
+    }
+
+    .name {
+        padding: 0 20px;
+        color: #f9fbfc;
+        height: 50px;
+        box-sizing: border-box;
+        line-height: 50px;
+        font-size: 13px;
+        font-weight: 300;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: $pitch-black;
+        text-align: left;
+
+        @media (max-width: $screen-xs-max) {
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+}

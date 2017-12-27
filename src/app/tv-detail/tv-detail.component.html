@@ -1,0 +1,20 @@
+<section class="tv-container">
+
+  <bg-detail [bg]="detailTv.backdrop_path"></bg-detail>
+  <info-detail class="component-info" [detail]="detailTv"></info-detail>
+
+  <section *ngIf="creditsTv.cast.length > 0">
+    <slider [tvs]="creditsTv.cast" [title]="'Top Billed Cast'" [section]="'actors'" [all]="false" [url]="''"></slider>
+  </section>
+
+  <section *ngIf="similarTv.results.length > 0">
+    <slider [tvs]="similarTv.results" [title]="'Similar'" [section]="'tv'" [all]="false" [url]="''"></slider>
+  </section> 
+
+  <section *ngIf="recommendationsTv.results.length > 0">
+    <slider [tvs]="recommendationsTv.results" [title]="'Recommendations'" [section]="'tv'" [all]="false" [url]="''"></slider>
+  </section>
+
+</section>
+
+

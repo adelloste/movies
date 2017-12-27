@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component }             from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
+import { environment } from "../environments/environment";
+
+// Declare ga function as ambient
+declare var ga:Function;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +13,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if(event instanceof NavigationEnd && environment.production) {
+        ga('send', event.urlAfterRedirects);
+      }
+    });
+  }
 }

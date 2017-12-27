@@ -1,53 +1,19 @@
-<section class="movie-container">
-  <section class="movie-wrapper">
-    <div class="col-xs-12 bg-img" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/w780/' + movie.backdrop_path + ')'}"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-poster">
-          <div class="poster">
-            <img [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/w780' + movie.poster_path : 'assets/img/placeholder.gif'" class="img-responsive center-block"/>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-9">
-          <div class="">
-            <h2>{{movie.title}}</h2>
-            <h5>{{movie.release_date | date:longDate}}</h5>
-          </div>
-          <rating [vote]="movie.vote_average"></rating>
-          <div class="">
-            <p>{{movie.overview}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="row divider">
-      <div class="col-xs-12">
-      </div>
-    </div>
-  </section>
-  <section *ngIf="actors.length > 0">
-    <div class="container">
-      <h3> Top Billed Cast </h3>
-      <div class="row">
-        <card-actor *ngFor="let actor of actors"
-            [actor]="actor">
-        </card-actor>
-      </div>
-    </div>
+<section class="movie-detail-container">
+  
+  <bg-detail [bg]="detail.backdrop_path"></bg-detail>
+  <info-detail class="component-info" [detail]="detail"></info-detail>
+
+  <section *ngIf="credits.cast.length > 0">
+    <slider [tvs]="credits.cast" [title]="'Top Billed Cast'" [section]="'actors'" [all]="false" [url]="''"></slider>
   </section>
 
-  <section *ngIf="recommendations.length > 0">
-    <div class="container">
-      <h3> Recommendations </h3>
-      <div class="row">
-        <card-recommendation *ngFor="let recommendation of recommendations"
-            [recommendation]="recommendation">
-        </card-recommendation>
-      </div>
-    </div>
-  </section>
+  <section *ngIf="similars.results.length > 0">
+    <slider [tvs]="similars.results" [title]="'Similar'" [section]="'movie'" [all]="false" [url]="''"></slider>
+  </section> 
 
+  <section *ngIf="recommendations.results.length > 0">
+    <slider [tvs]="recommendations.results" [title]="'Recommendations'" [section]="'movie'" [all]="false" [url]="''"></slider>
+  </section> 
+  
 </section>
 

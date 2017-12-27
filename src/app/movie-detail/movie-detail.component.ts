@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
-import { Location }                 from '@angular/common';
 
-import { MovieService } from './services/movie.service';
+import { MovieService }         from './services/movie.service';
+import { LoaderManagerService } from '../core/services/loader-manager.service';
 
 import { Movie }           from './models/movie-detail';
 import { Credits }         from './models/credits';
+import { Similars }        from './models/similars';
 import { Recommendation }  from './models/recommendation';
 import { Recommendations } from './models/recommendations';
 
@@ -18,35 +19,44 @@ import 'rxjs/add/operator/switchMap';
 })
 export class MovieDetailComponent implements OnInit {
 
-  actors: Credits;
-  movie: Movie;
-  recommendations: Array<Recommendation>;
+  credits: Credits;
+  detail: Movie;
+  similars: Similars;
+  recommendations: any;
   errorMessage: string;
 
-  constructor(private movieService: MovieService, private route: ActivatedRoute, private location: Location) { }
+  constructor(
+    private movieService: MovieService, 
+    private route: ActivatedRoute,
+    private loaderManagerService: LoaderManagerService
+  ) { }
 
   ngOnInit() {
+    this.loaderManagerService.changeStatus(false);
     this.getMovie();
     this.getCredits();
-    this.getRecommendation();
+    this.getSimilars();
+    this.getRecommendations();
   }
 
-  // Retrieve movie-detail from server
   getMovie() {
     this.route.data
-        .subscribe((data: { movie: Movie }) => { this.movie = data.movie; }, error =>  this.errorMessage = <any>error);
+        .subscribe((data: { detail: Movie }) => { this.detail = data.detail; }, error =>  this.errorMessage = <any>error);
   }
 
-  // Retrieve credits from server
   getCredits() {
     this.route.data
-        .subscribe((data: { credits: Credits }) => { this.actors = data.credits["cast"].slice(0, 6);  }, error =>  this.errorMessage = <any>error);
+        .subscribe((data: { credits: Credits }) => { this.credits = data.credits;  }, error =>  this.errorMessage = <any>error);
   }
 
-  // Retrieve recommendation from server
-  getRecommendation() {
+  getSimilars() {
     this.route.data
-        .subscribe((data: { recommendation: Recommendations }) => { this.recommendations = data.recommendation["results"].slice(0, 6); }, error =>  this.errorMessage = <any>error);
+        .subscribe((data: { similars: Similars }) => { this.similars = data.similars; }, error =>  this.errorMessage = <any>error);
+  }
+
+  getRecommendations() {
+    this.route.data
+        .subscribe((data: { recommendations: Recommendations }) => { this.recommendations = data.recommendations; }, error =>  this.errorMessage = <any>error);
   }
 
 }
