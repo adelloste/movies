@@ -11,11 +11,15 @@ import { LoaderManagerService }  from './services/loader-manager.service';
 import { StorageManagerService } from './services/storage-manager.service';
 import { DomService }            from './services/dom.service';
 
-import { SearchService }        from './services/search.service';
-import { AiringTodayTvService } from './services/airing-today-tv.service';
-import { PopularTvService }     from './services/popular-tv.service';
-import { TopRatedTvService }    from './services/top-rated-tv.service';
-import { OnTheAirTvService }    from './services/on-the-air-tv.service';
+import { SearchService }           from './services/search.service';
+import { AiringTodayTvService }    from './services/airing-today-tv.service';
+import { PopularTvService }        from './services/popular-tv.service';
+import { TopRatedTvService }       from './services/top-rated-tv.service';
+import { OnTheAirTvService }       from './services/on-the-air-tv.service';
+import { PopularMoviesService }    from './services/popular-movies.service';
+import { NowPlayingMoviesService } from './services/now-playing-movies.service';
+import { UpcomingMoviesService }   from './services/upcoming-movies.service';
+import { TopRatedMoviesService }   from './services/top-rated-movies.service';
 
 @NgModule({
   imports: [
@@ -39,7 +43,11 @@ import { OnTheAirTvService }    from './services/on-the-air-tv.service';
     AiringTodayTvService,
     PopularTvService,
     TopRatedTvService,
-    OnTheAirTvService
+    OnTheAirTvService,
+    PopularMoviesService,
+    NowPlayingMoviesService,
+    UpcomingMoviesService,
+    TopRatedMoviesService
   ],
   entryComponents: [
     ModalSearchComponent
@@ -61,7 +69,11 @@ export class CoreModule {
         AiringTodayTvService,
         PopularTvService,
         TopRatedTvService,
-        OnTheAirTvService
+        OnTheAirTvService,
+        PopularMoviesService,
+        NowPlayingMoviesService,
+        UpcomingMoviesService,
+        TopRatedMoviesService
       ]
     };
   }

@@ -1,40 +1,41 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ActivatedRoute, Params }                 from '@angular/router';
 
-import { PopularTvs } from '../core/models/popular-tvs';
+import { TopRatedMovies } from '../core/models/top-rated-movies';
 
-import { PopularTvService }     from '../core/services/popular-tv.service';
-import { LoaderManagerService } from '../core/services/loader-manager.service';
+import { TopRatedMoviesService } from '../core/services/top-rated-movies.service';
+import { LoaderManagerService }  from '../core/services/loader-manager.service';
 
 @Component({
-  selector: 'tv-wall-popular',
-  templateUrl: './tv-wall-popular.component.html',
-  styleUrls: ['./tv-wall-popular.component.scss']
+  selector: 'movie-wall-top-rated',
+  templateUrl: './movie-wall-top-rated.component.html',
+  styleUrls: ['./movie-wall-top-rated.component.scss']
 })
-export class TvWallPopularComponent implements OnInit {
+export class MovieWallTopRatedComponent implements OnInit {
 
-  series: any = [];
-  index: number = 2;
-  totalPages: number;
-  isLoading: boolean = false;
-  errorMessage: string;
+  series       : any = [];
+  index        : number = 2;
+  totalPages   : number;
+  isLoading    : boolean = false;
+  errorMessage : string;
 
   constructor(
     private route: ActivatedRoute, 
-    private popularTvService: PopularTvService, 
+    private topRatedMoviesService: TopRatedMoviesService, 
     private loaderManagerService: LoaderManagerService
   ) { }
 
   ngOnInit() {
     this.loaderManagerService.changeStatus(false);
-    this.getPopularTv();
+
+    this.getPopularMovie();
   };
 
-  getPopularTv() {
+  getPopularMovie() {
     this.route.data.subscribe(
-      (data: { popularTV: PopularTvs }) => {
-        this.series = this.series.concat(data.popularTV["results"]);
-        this.totalPages = data.popularTV["total_pages"];
+      (data: { topRatedMovie: TopRatedMovies }) => {
+        this.series     = this.series.concat(data.topRatedMovie.results);
+        this.totalPages = data.topRatedMovie.total_pages;
       },
       error =>  {
         this.errorMessage = <any>error
@@ -43,10 +44,10 @@ export class TvWallPopularComponent implements OnInit {
   }
 
   loadMore() {
-    this.popularTvService.getPopularTV(this.index).subscribe(
-      tvs => {
+    this.topRatedMoviesService.getTopratedMovies(this.index).subscribe(
+      movies => {
         this.loaderManagerService.changeStatus(false);
-        this.series = this.series.concat(tvs["results"]);
+        this.series = this.series.concat(movies.results);
         this.index++;
         this.isLoading = false;
       },
@@ -70,4 +71,5 @@ export class TvWallPopularComponent implements OnInit {
       }
     }
   }
+
 }

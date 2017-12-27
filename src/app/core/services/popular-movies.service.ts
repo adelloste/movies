@@ -2,16 +2,17 @@ import { Injectable }             from '@angular/core';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable }             from 'rxjs/Observable';
 
-import { Movies } from '../models/movies';
+// import { PopularTvs } from '../models/popular-tvs';
 
 import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class MoviesService {
+export class PopularMoviesService {
 
   constructor(private http: HttpClient) { }
-
-  getMovies(index:number): Observable<Movies> {
-    return this.http.get<Movies>(environment.api.baseUrl + environment.api.popular.uri, { params: new HttpParams().set('page', index.toString()) });
+  
+  getPopularMovies(index:number): Observable<any> {
+    return this.http.get<any>(environment.api.baseUrl + environment.api.popularMOVIES.uri, { params: new HttpParams().set('page', index.toString()) });
   }
+
 }
