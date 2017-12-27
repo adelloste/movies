@@ -1,7 +1,15 @@
 export const environment = {
   production: true,
+  firebase: { 
+    apiKey: "", 
+    authDomain: "", 
+    databaseURL: "", 
+    projectId: "", 
+    storageBucket: "", 
+    messagingSenderId: "" 
   }, 
   api: {
+    apiKey: "",
     baseUrl: 'https://api.themoviedb.org/3',
     language: 'en-US',
     popularMOVIES: {
