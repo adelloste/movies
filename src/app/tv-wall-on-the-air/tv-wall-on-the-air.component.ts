@@ -29,8 +29,8 @@ export class TvWallOnTheAirComponent implements OnInit {
   getOnTheAirTv() {
     this.route.data.subscribe(
       (data: { onTheAirTV: OnTheAirTvs }) => {
-        this.series = this.series.concat(data.onTheAirTV["results"]);
-        this.totalPages = data.onTheAirTV["total_pages"];
+        this.series = this.series.concat(data.onTheAirTV.results);
+        this.totalPages = data.onTheAirTV.total_pages;
       },
       error =>  {
         this.errorMessage = <any>error
@@ -42,7 +42,7 @@ export class TvWallOnTheAirComponent implements OnInit {
     this.onTheAirTvService.getOnTheAirTV(this.index).subscribe(
       tvs => {
         this.loaderManagerService.changeStatus(false);
-        this.series = this.series.concat(tvs["results"]);
+        this.series = this.series.concat(tvs.results);
         this.index++;
         this.isLoading = false;
       },

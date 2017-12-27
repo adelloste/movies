@@ -33,8 +33,8 @@ export class TvWallTopRatedComponent implements OnInit {
   getTopRatedTv() {
     this.route.data.subscribe(
       (data: { topRatedTV: TopRatedTvs }) => {
-        this.series = this.series.concat(data.topRatedTV["results"]);
-        this.totalPages = data.topRatedTV["total_pages"];
+        this.series = this.series.concat(data.topRatedTV.results);
+        this.totalPages = data.topRatedTV.total_pages;
       },
       error =>  {
         this.errorMessage = <any>error
@@ -46,7 +46,7 @@ export class TvWallTopRatedComponent implements OnInit {
     this.topRatedTvService.getTopRatedTV(this.index).subscribe(
       tvs => {
         this.loaderManagerService.changeStatus(false);
-        this.series = this.series.concat(tvs["results"]);
+        this.series = this.series.concat(tvs.results);
         this.index++;
         this.isLoading = false;
       },

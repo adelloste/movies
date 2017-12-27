@@ -33,8 +33,8 @@ export class TvWallAiringTodayComponent implements OnInit {
   getAiringTodayTv() {
     this.route.data.subscribe(
       (data: { airingTodayTV: AiringTodayTvs }) => {
-        this.series = this.series.concat(data.airingTodayTV["results"]);
-        this.totalPages = data.airingTodayTV["total_pages"];
+        this.series = this.series.concat(data.airingTodayTV.results);
+        this.totalPages = data.airingTodayTV.total_pages;
       },
       error =>  {
         this.errorMessage = <any>error
@@ -46,7 +46,7 @@ export class TvWallAiringTodayComponent implements OnInit {
     this.airingTodayTvService.getAiringTodayTV(this.index).subscribe(
       tvs => {
         this.loaderManagerService.changeStatus(false);
-        this.series = this.series.concat(tvs["results"]);
+        this.series = this.series.concat(tvs.results);
         this.index++;
         this.isLoading = false;
       },
