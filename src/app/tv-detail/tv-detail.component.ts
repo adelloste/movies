@@ -6,6 +6,7 @@ import { LoaderManagerService } from '../core/services/loader-manager.service';
 import { TvDetails }         from './models/tv-details';
 import { TvCredits }         from './models/tv-credits';
 import { TvSimilars }        from './models/tv-similars';
+import { Videos }            from './models/videos';
 import { TvRecommendations } from './models/tv-recommendations';
 
 @Component({
@@ -19,6 +20,7 @@ export class TvDetailComponent implements OnInit {
   creditsTv         : TvCredits;
   similarTv         : TvSimilars;
   recommendationsTv : TvRecommendations;
+  videos            : Videos;
   errorMessage      : string;
 
   constructor(private route: ActivatedRoute, private loaderManagerService: LoaderManagerService) { }
@@ -29,6 +31,7 @@ export class TvDetailComponent implements OnInit {
     this.getCreditsTV();
     this.getSimilarTV();
     this.getRecommendationsTV();
+    this.getVideos();
   }
 
   getTV() {
@@ -49,6 +52,11 @@ export class TvDetailComponent implements OnInit {
   getRecommendationsTV() {
     this.route.data
         .subscribe((data: { recommendationsTV: TvRecommendations }) => { this.recommendationsTv = data.recommendationsTV; }, error =>  this.errorMessage = <any>error);
+  }
+
+  getVideos() {
+    this.route.data
+        .subscribe((data: { videosTV: Videos }) => { this.videos = data.videosTV; }, error =>  this.errorMessage = <any>error);
   }
 
 }

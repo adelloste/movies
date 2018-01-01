@@ -3,6 +3,10 @@
   <bg-detail [bg]="detailTv.backdrop_path"></bg-detail>
   <info-detail class="component-info" [detail]="detailTv"></info-detail>
 
+  <section class="section-video" *ngIf="videos.results.length > 0">
+      <trailer [media]="videos.results[0]"></trailer>
+    </section>
+
   <section *ngIf="creditsTv.cast.length > 0">
     <slider [tvs]="creditsTv.cast" [title]="'Top Billed Cast'" [section]="'actors'" [all]="false" [url]="''"></slider>
   </section>

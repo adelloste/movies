@@ -7,7 +7,7 @@ import { LoaderManagerService } from '../core/services/loader-manager.service';
 import { Movie }           from './models/movie-detail';
 import { Credits }         from './models/credits';
 import { Similars }        from './models/similars';
-import { Recommendation }  from './models/recommendation';
+import { Videos }          from './models/videos';
 import { Recommendations } from './models/recommendations';
 
 import 'rxjs/add/operator/switchMap';
@@ -19,11 +19,12 @@ import 'rxjs/add/operator/switchMap';
 })
 export class MovieDetailComponent implements OnInit {
 
-  credits: Credits;
-  detail: Movie;
-  similars: Similars;
-  recommendations: any;
-  errorMessage: string;
+  credits         : Credits;
+  detail          : Movie;
+  similars        : Similars;
+  recommendations : Recommendations;
+  videos          : Videos;
+  errorMessage    : string;
 
   constructor(
     private movieService: MovieService, 
@@ -37,6 +38,7 @@ export class MovieDetailComponent implements OnInit {
     this.getCredits();
     this.getSimilars();
     this.getRecommendations();
+    this.getVideos();
   }
 
   getMovie() {
@@ -57,6 +59,11 @@ export class MovieDetailComponent implements OnInit {
   getRecommendations() {
     this.route.data
         .subscribe((data: { recommendations: Recommendations }) => { this.recommendations = data.recommendations; }, error =>  this.errorMessage = <any>error);
+  }
+
+  getVideos() {
+    this.route.data
+        .subscribe((data: { videos: Videos }) => { this.videos = data.videos; }, error =>  this.errorMessage = <any>error);
   }
 
 }

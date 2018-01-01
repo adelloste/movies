@@ -8,38 +8,8 @@
         top: -50px;
     }
 
-    // .tv-wrapper {
-    //     position: relative;
-    //     min-height: 400px;
-    //     color: $snow;
-
-    //     .bg-img {
-    //         -webkit-filter: grayscale(100%) brightness(65%) contrast(100%);
-    //         -moz-filter: grayscale(100%) brightness(65%) contrast(100%);
-    //         -ms-filter: grayscale(100%) brightness(65%) contrast(100%);
-    //         -o-filter: grayscale(100%) brightness(65%) contrast(100%);
-    //         filter: grayscale(100%) brightness(65%) contrast(100%);
-    //         background-size: cover;
-    //         background-repeat: no-repeat;
-    //         background-position: center;
-    //         transition: linear .4s;
-    //         background-color: $gray-light;
-    //         position: absolute;
-    //         top: 0;
-    //         left: 0;
-    //         right: 0;
-    //         bottom: 0;
-    //         z-index: -1;
-    //     }
-
-    //     .col-poster {
-    //         @media (max-width: $screen-xs-max) {
-    //             display: none;
-    //         }
-
-    //         .poster {
-    //             padding: 5%;
-    //         }
-    //     }
-    // }
+    .section-video {
+        position: relative;
+        top: -30px;
+    }
 }

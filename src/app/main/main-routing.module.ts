@@ -63,7 +63,7 @@ import { MainGuard }     from './main.guard';
           {
             path: 'movie/wall/nowplaying',
             loadChildren: '../movie-wall-now-playing/movie-wall-now-playing.module#MovieWallNowPlayingModule'
-          },
+          }
         ]
       }
     ])

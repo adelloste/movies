@@ -15,14 +15,16 @@ import { SliderComponent }             from './slider/slider.component';
 import { SlideCreditComponent }        from './slide-credit/slide-credit.component';
 import { SliderSearchComponent }       from './slider-search/slider-search.component';
 import { SlideSearchComponent }        from './slide-search/slide-search.component';
+import { ToastComponent }              from './toast/toast.component';
+import { TrailerComponent }            from './trailer/trailer.component';
 
 import { AuthService }    from '../login/services/auth.service';
 import { SidenavService } from './services/sidenav.service';
 
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { TrustUrlPipe } from './pipes/trust-url.pipe';
 
 import { AutofocusDirective } from './directives/autofocus.directive';
-import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   imports: [
@@ -45,13 +47,15 @@ import { ToastComponent } from './toast/toast.component';
     SliderSearchComponent,
     SlideSearchComponent,
     AutofocusDirective,
-    ToastComponent
+    ToastComponent,
+    TrustUrlPipe,
+    TrailerComponent
   ],
   exports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    
+  
     HeaderComponent,
     FooterComponent,
     SidenavComponent,
@@ -66,7 +70,9 @@ import { ToastComponent } from './toast/toast.component';
     SliderSearchComponent,
     SlideSearchComponent,
     AutofocusDirective,
-    ToastComponent
+    ToastComponent,
+    TrustUrlPipe,
+    TrailerComponent
   ],
   entryComponents: [
     ToastComponent

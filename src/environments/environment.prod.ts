@@ -60,6 +60,12 @@ export const environment = {
       timeout: 30000,
       uri: "/movie/{MOVIE_ID}/recommendations"
     },
+    videosMOVIE: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/movie/{MOVIE_ID}/videos"
+    },
     searchMovie: {
       contentType: "application/json",
       method: "GET",
@@ -113,6 +119,12 @@ export const environment = {
       method: "GET", 
       timeout: 30000, 
       uri: "/tv/{TV_ID}/recommendations" 
+    },
+    videosTV: {
+      contentType: "application/json",
+      method: "GET",
+      timeout: 30000,
+      uri: "/tv/{TV_ID}/videos"
     },
     search: { 
       contentType: "application/json", 

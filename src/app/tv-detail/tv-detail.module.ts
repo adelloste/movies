@@ -12,6 +12,8 @@ import { TvSimilarService }                 from './services/tv-similar.service'
 import { TvSimilarResolverService }         from './services/tv-similar-resolver.service';
 import { TvRecommendationsService }         from './services/tv-recommendations.service';
 import { TvRecommendationsResolverService } from './services/tv-recommendations-resolver.service';
+import { TvVideosService }                  from './services/tv-videos.service';
+import { TvVideosResolverService }          from './services/tv-videos-resolver.service';
 
 @NgModule({
   imports: [
@@ -29,7 +31,9 @@ import { TvRecommendationsResolverService } from './services/tv-recommendations-
     TvSimilarService,
     TvSimilarResolverService,
     TvRecommendationsService,
-    TvRecommendationsResolverService
+    TvRecommendationsResolverService,
+    TvVideosService,
+    TvVideosResolverService
   ]
 })
 export class TvDetailModule { }

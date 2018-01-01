@@ -1,11 +1,12 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule }        from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 
 import { LoaderComponent }      from './components/loader/loader.component';
 import { ModalSearchComponent } from './components/modal-search/modal-search.component';
+import { ModalVideoComponent }  from './components/modal-video/modal-video.component';
 
 import { LoaderManagerService }  from './services/loader-manager.service';
 import { StorageManagerService } from './services/storage-manager.service';
@@ -29,11 +30,13 @@ import { TopRatedMoviesService }   from './services/top-rated-movies.service';
   ],
   declarations: [
     LoaderComponent,
-    ModalSearchComponent
+    ModalSearchComponent,
+    ModalVideoComponent
   ],
   exports: [
     LoaderComponent,
-    ModalSearchComponent
+    ModalSearchComponent,
+    ModalVideoComponent
   ],
   providers: [
     LoaderManagerService,
@@ -50,7 +53,8 @@ import { TopRatedMoviesService }   from './services/top-rated-movies.service';
     TopRatedMoviesService
   ],
   entryComponents: [
-    ModalSearchComponent
+    ModalSearchComponent,
+    ModalVideoComponent
   ]
 })
 export class CoreModule {

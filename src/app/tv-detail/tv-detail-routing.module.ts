@@ -5,6 +5,7 @@ import { TvDetailResolverService }          from './services/tv-detail-resolver.
 import { TvCreditsResolverService }         from './services/tv-credits-resolver.service';
 import { TvSimilarResolverService }         from './services/tv-similar-resolver.service';
 import { TvRecommendationsResolverService } from './services/tv-recommendations-resolver.service';
+import { TvVideosResolverService }          from './services/tv-videos-resolver.service';
 
 import { TvDetailComponent } from './tv-detail.component';
 
@@ -18,7 +19,8 @@ import { TvDetailComponent } from './tv-detail.component';
           detailTV          : TvDetailResolverService,
           creditsTV         : TvCreditsResolverService,
           similarTV         : TvSimilarResolverService,
-          recommendationsTV : TvRecommendationsResolverService
+          recommendationsTV : TvRecommendationsResolverService,
+          videosTV          : TvVideosResolverService
         }
       }
     ])

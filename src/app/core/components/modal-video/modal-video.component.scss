@@ -1,0 +1,35 @@
+@import '../../../../variables';
+
+.video-modal {
+    color: #f9fbfc;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .video-modal-close {
+        position: absolute;
+        right: 10px;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .video-modal-body {
+        width: 45%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @media (max-width: $screen-xs-max) and (orientation : portrait) {
+            width: 100%;
+        }
+
+        @media (max-width: $screen-xs-max) and (orientation : landscape) {
+            width: 80%;
+        }
+
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            width: 80%;
+        }
+    }
+}

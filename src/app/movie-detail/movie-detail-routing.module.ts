@@ -5,6 +5,7 @@ import { MovieResolverService }               from './services/movie-resolver.se
 import { MovieCreditsResolverService }        from './services/movie-credits-resolver.service';
 import { MovieSimilarResolverService }        from './services/movie-similar-resolver.service';
 import { MovieRecommendationResolverService } from './services/movie-recommendation-resolver.service';
+import { MovieVideosResolverService }         from './services/movie-videos-resolver.service';
 
 import { MovieDetailComponent } from './movie-detail.component';
 
@@ -18,7 +19,8 @@ import { MovieDetailComponent } from './movie-detail.component';
           detail          : MovieResolverService,
           credits         : MovieCreditsResolverService,
           similars        : MovieSimilarResolverService,
-          recommendations : MovieRecommendationResolverService
+          recommendations : MovieRecommendationResolverService,
+          videos          : MovieVideosResolverService
         }
       }
     ])

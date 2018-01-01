@@ -1,0 +1,17 @@
+<section>
+  <div class="video-modal">
+    <div class="video-modal-close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </div>
+    <div class="video-modal-body">
+      <div class="embed-responsive embed-responsive-16by9">
+          <iframe 
+            [src]="'https://www.youtube.com/embed/' + id + '?rel=0&amp;autoplay=1' | trustUrl" 
+            frameborder="0" 
+            gesture="media" 
+            allow="encrypted-media"
+            allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
