@@ -16,7 +16,8 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if(event instanceof NavigationEnd && environment.production) {
-        ga('send', event.urlAfterRedirects);
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
       }
     });
   }
